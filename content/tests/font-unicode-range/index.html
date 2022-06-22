@@ -1,0 +1,57 @@
+---
+title: Font unicode-range subsetting
+references:
+- https://developer.mozilla.org/en-US/docs/web/css/@font-face/unicode-range
+---
+<style>
+  @font-face {
+      font-family: 'Ampersand';
+      src: local('Times New Roman');
+      unicode-range: U+26;
+  }
+  @font-face {
+      font-family: 'NonAmpersand';
+      src: local('Times New Roman');
+  }
+
+  div#font-unicode-range10 div.vis_test {
+      font-family: Ampersand, sans-serif;
+  }
+  div#font-unicode-range10 div.vis_ref img {
+      height: 1em;
+  }
+  
+  .ampersand {
+      font-family: Ampersand, monospace;
+  }
+  .non-ampersand {
+      font-family: NonAmpersand, monospace;
+  }
+</style>
+
+<div class="caniuse-style-test">
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-unicode-range10" class="visual">
+      <div class="vis_test">ABC&&&012</div>
+      <div class="vis_ref">
+        <img src="img/font-unicode-range10.png">
+      </div>
+    </div>
+    <p class="condition">Only `&' character is displayed with the serif font</p>
+  </div>
+</div>
+
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="legend"><q>unicode-range: U+26;</q></div>
+    <div class="ampersand test-body feature-on">
+      only " & " character should be displayed with Serif (Times New Roman) font.
+    </div>
+    <div class="non-ampersand test-body feature-off">
+      only " & " character should be displayed with Serif (Times New Roman) font.
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,36 @@
+---
+title: autofocus for <select> tag
+references:
+  - https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus
+---
+<div class="verbose-test">
+
+  <div class="test-wrap">
+    <div class="legend"><q>&lt;select autofocus&gt;</q></div>
+    <div class="test-body">
+      <select autofocus>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+    </div>
+    <div class="description">
+      This select form is focused when this page is loaded.
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>&lt;select&gt;</q> without autofocus</div>
+    <div class="test-body">
+      <select>
+        <option>Option 1</option>
+        <option>Option 2</option>
+        <option>Option 3</option>
+      </select>
+    </div>
+    <div class="description">
+      This select form is not focused when this page is loaded.
+    </div>
+  </div>
+</div>
+

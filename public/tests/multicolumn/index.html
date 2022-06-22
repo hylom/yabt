@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+CSS3 Multiple column layout Test &ndash; Yet Another Browser Tests
+</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/test-common.css">
+  </head>
+  <body>
+
+    <div id="site-header">
+      <h1><a href="/">YABT - YET ANOTHER BROWSER TESTS</a></h1>
+    </div>
+
+    <div id="content">
+      <div id="sidebar">
+        <h2>Tests index</h2>
+        <ul>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/css-focus-visible/">:focus-visible CSS pseudo-class</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/autofocus/a/">autofocus for &lt;a&gt; tag</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/autofocus/select/">autofocus for &lt;select&gt; tag</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/css-marker-pseudo/">CSS ::marker pseudo-element</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/background-attachment/">CSS background-attachment</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-smooth/">CSS font-smooth</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-variant-alternates/">CSS font-variant-alternates</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/multicolumn/">CSS3 Multiple column layout</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-unicode-range/">Font unicode-range subsetting</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div id="main">
+        
+
+<div class="header">
+  <h2 class="test-title">CSS3 Multiple column layout</h2>
+</div>
+
+<div class="test-content">
+  <style>
+</style>
+
+<div class="caniuse-style-test">
+
+  <div class="test_wrap">
+    <h3>Visual-square</h3><div id="multicolumn1" class="visual-square">
+      <div class="square"><div style="column-width: 15px; column-gap: 0; width:30px;height:30px;background:red;">
+	  <div style="display:inline-block;width:15px;height:30px;background:lime;color:lime;">.</div>
+	  <div style="display:inline-block;width:15px;height:30px;background:lime;color:lime;">.</div>
+        </div>
+      </div>
+    </div>
+    <div class="info">
+      column-width: 15px;
+      column-gap: 0;
+    </div>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Visual-square</h3><div id="multicolumn2" class="visual-square">
+      <div class="square">
+        <div style="width:30px; height:30px; background:red; overflow:hidden">
+	  <div style="width:60px; height:70px; column-width:30px; column-gap:0; background:red; position:relative; left:-30px;">
+	    <div style="width:30px; height:30px; break-after:column; color: red;">.</div>
+	    <div style="width:30px; height:30px; background:lime; color: lime;">.</div>
+            <div style="height: 60px; color: red;">.</div>
+	  </div>
+        </div>
+      </div>
+    </div>
+    <div class="info">
+      column-width: 30px;
+      column-gap: 0;
+      break-after: column;
+    </div>
+  </div>
+</div>
+
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="legend">first div has <q>break-after: column;</q></div>
+    <div class="test-body feature-on">
+      <div style="width: 100px; height: 150px; column-width: 50px; column-gap: 0; border: 1px solid;">
+        <div style="display:block; background: #ddf; break-after: column;">0 1</div>
+        <div style="display:block; background: #fdd;">2 3 4</div>
+        <div style="display:block; background: #dfd;">5 6 7</div>
+        <div style="display:block; background: #dff;">8 9 10</div>
+      </div>
+    </div>
+    <div class="test-body feature-off">
+      <div style="width: 100px; height: 150px; column-width: 50px; column-gap: 0; border: 1px solid;">
+        <div style="display:block; background: #ddf;;">0 1</div>
+        <div style="display:block; background: #fdd;">2 3 4</div>
+        <div style="display:block; background: #dfd;">5 6 7</div>
+        <div style="display:block; background: #dff;">8 9 10</div>
+      </div>
+  </div>
+</div>
+
+  <div class="verbose-test">
+  <div class="test-wrap">
+    <div class="legend">first inline-block div has <q>break-after: column;</q></div>
+    <div class="test-body feature-on">
+      <div style="width: 100px; height: 150px; column-width: 50px; column-gap: 0; border: 1px solid;">
+        <div style="display:inline-block; background: #ddf; break-after: column;">0 1</div>
+        <div style="display:inline-block; background: #fdd;">2 3 4</div>
+        <div style="display:inline-block; background: #dfd;">5 6 7</div>
+        <div style="display:inline-block; background: #dff;">8 9 10</div>
+      </div>
+    </div>
+    <div class="test-body feature-off">
+      <div style="width: 100px; height: 150px; column-width: 50px; column-gap: 0; border: 1px solid;">
+        <div style="display:inline-block; background: #ddf;;">0 1</div>
+        <div style="display:inline-block; background: #fdd;">2 3 4</div>
+        <div style="display:inline-block; background: #dfd;">5 6 7</div>
+        <div style="display:inline-block; background: #dff;">8 9 10</div>
+      </div>
+  </div>
+</div>
+
+<div class="note">
+</div>
+
+</div>
+
+<div class="test-footer">
+  
+  <div class="references">
+    <div class="title">References:</div>
+    <ul>
+      
+      <li><a href="https://developer.mozilla.org/en/docs/Web/CSS/CSS_Columns">https://developer.mozilla.org/en/docs/Web/CSS/CSS_Columns</a></li>
+      
+    </ul>
+  </div>
+  
+</div>
+
+        
+        
+      </div>
+    </div>
+  </body>
+</html>

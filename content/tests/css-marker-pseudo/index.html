@@ -1,0 +1,104 @@
+---
+title: CSS ::marker pseudo-element
+references:
+- https://developer.mozilla.org/en-US/docs/Web/CSS/::marker
+---
+<style>
+  .css-marker-pseudo {
+      border: 1px solid lightgray;
+  }
+  .css-marker-pseudo li {
+      list-style-type: "AbC    dE: ";
+      margin-left: 6em;
+  }
+  .css-marker-pseudo.text li::marker {
+      white-space: pre;
+      text-transform: uppercase;
+      letter-spacing: 0px;
+  }
+  .css-marker-pseudo.direction li::marker {
+      direction: rtl;
+  }
+  .css-marker-pseudo.font li::marker {
+      font-weight: bold;
+      font-style: italic;
+  }
+  .css-marker-pseudo.color li::marker {
+      color: green;
+  }
+  .css-marker-pseudo.content li::marker {
+      content: "AAAAA: ";
+  }
+</style>
+
+<div class="verbose-test">
+
+  <div class="test-wrap">
+    <div class="legend">no ::marker property</div>
+    <div class="test-body css-marker-pseudo">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">li::marker with <q>white-space: pre; text-transform: uppercase; letter-spacing: 0px;</q></div>
+    <div class="test-body css-marker-pseudo text">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">li::marker with <q>direction: rtl;</q></div>
+    <div class="test-body css-marker-pseudo direction">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">li::marker with <q>font-weight: bold;
+      font-style: italic;</q></div>
+    <div class="test-body css-marker-pseudo font">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">li::marker with <q>color: green;</q></div>
+    <div class="test-body css-marker-pseudo color">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">li::marker with <q>content: "AAAAA: ";</q></div>
+    <div class="test-body css-marker-pseudo content">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+</div>
+  
+

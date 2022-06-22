@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+CSS ::marker pseudo-element Test &ndash; Yet Another Browser Tests
+</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/test-common.css">
+  </head>
+  <body>
+
+    <div id="site-header">
+      <h1><a href="/">YABT - YET ANOTHER BROWSER TESTS</a></h1>
+    </div>
+
+    <div id="content">
+      <div id="sidebar">
+        <h2>Tests index</h2>
+        <ul>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/css-focus-visible/">:focus-visible CSS pseudo-class</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/autofocus/a/">autofocus for &lt;a&gt; tag</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/autofocus/select/">autofocus for &lt;select&gt; tag</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/css-marker-pseudo/">CSS ::marker pseudo-element</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/background-attachment/">CSS background-attachment</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-smooth/">CSS font-smooth</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-variant-alternates/">CSS font-variant-alternates</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/multicolumn/">CSS3 Multiple column layout</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-unicode-range/">Font unicode-range subsetting</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div id="main">
+        
+
+<div class="header">
+  <h2 class="test-title">CSS ::marker pseudo-element</h2>
+</div>
+
+<div class="test-content">
+  <style>
+  .css-marker-pseudo {
+      border: 1px solid lightgray;
+  }
+  .css-marker-pseudo li {
+      list-style-type: "AbC    dE: ";
+      margin-left: 6em;
+  }
+  .css-marker-pseudo.text li::marker {
+      white-space: pre;
+      text-transform: uppercase;
+      letter-spacing: 0px;
+  }
+  .css-marker-pseudo.direction li::marker {
+      direction: rtl;
+  }
+  .css-marker-pseudo.font li::marker {
+      font-weight: bold;
+      font-style: italic;
+  }
+  .css-marker-pseudo.color li::marker {
+      color: green;
+  }
+  .css-marker-pseudo.content li::marker {
+      content: "AAAAA: ";
+  }
+</style>
+
+<div class="verbose-test">
+
+  <div class="test-wrap">
+    <div class="legend">no ::marker property</div>
+    <div class="test-body css-marker-pseudo">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">li::marker with <q>white-space: pre; text-transform: uppercase; letter-spacing: 0px;</q></div>
+    <div class="test-body css-marker-pseudo text">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">li::marker with <q>direction: rtl;</q></div>
+    <div class="test-body css-marker-pseudo direction">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">li::marker with <q>font-weight: bold;
+      font-style: italic;</q></div>
+    <div class="test-body css-marker-pseudo font">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">li::marker with <q>color: green;</q></div>
+    <div class="test-body css-marker-pseudo color">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">li::marker with <q>content: "AAAAA: ";</q></div>
+    <div class="test-body css-marker-pseudo content">
+      <ul>
+        <li>list item 1</li>
+        <li>list item 2</li>
+        <li>list item 3</li>
+      </ul>
+    </div>
+  </div>
+</div>
+  
+
+
+</div>
+
+<div class="test-footer">
+  
+  <div class="references">
+    <div class="title">References:</div>
+    <ul>
+      
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/::marker">https://developer.mozilla.org/en-US/docs/Web/CSS/::marker</a></li>
+      
+    </ul>
+  </div>
+  
+</div>
+
+        
+        
+      </div>
+    </div>
+  </body>
+</html>

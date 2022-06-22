@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://example.org/tests/css-focus-visible/</loc>
+  </url><url>
+    <loc>http://example.org/tests/autofocus/a/</loc>
+  </url><url>
+    <loc>http://example.org/tests/autofocus/select/</loc>
+  </url><url>
+    <loc>http://example.org/categories/</loc>
+  </url><url>
+    <loc>http://example.org/tests/css-marker-pseudo/</loc>
+  </url><url>
+    <loc>http://example.org/tests/background-attachment/</loc>
+  </url><url>
+    <loc>http://example.org/tests/font-smooth/</loc>
+  </url><url>
+    <loc>http://example.org/tests/font-variant-alternates/</loc>
+  </url><url>
+    <loc>http://example.org/tests/multicolumn/</loc>
+  </url><url>
+    <loc>http://example.org/tests/font-unicode-range/</loc>
+  </url><url>
+    <loc>http://example.org/tags/</loc>
+  </url><url>
+    <loc>http://example.org/tests/</loc>
+  </url><url>
+    <loc>http://example.org/</loc>
+  </url>
+</urlset>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+CSS font-smooth Test &ndash; Yet Another Browser Tests
+</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/test-common.css">
+  </head>
+  <body>
+
+    <div id="site-header">
+      <h1><a href="/">YABT - YET ANOTHER BROWSER TESTS</a></h1>
+    </div>
+
+    <div id="content">
+      <div id="sidebar">
+        <h2>Tests index</h2>
+        <ul>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/css-focus-visible/">:focus-visible CSS pseudo-class</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/autofocus/a/">autofocus for &lt;a&gt; tag</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/autofocus/select/">autofocus for &lt;select&gt; tag</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/css-marker-pseudo/">CSS ::marker pseudo-element</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/background-attachment/">CSS background-attachment</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-smooth/">CSS font-smooth</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-variant-alternates/">CSS font-variant-alternates</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/multicolumn/">CSS3 Multiple column layout</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-unicode-range/">Font unicode-range subsetting</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div id="main">
+        
+
+<div class="header">
+  <h2 class="test-title">CSS font-smooth</h2>
+</div>
+
+<div class="test-content">
+  <style>
+  .font-smooth-wrap {
+      position: relative;
+      height: 3em;
+      width: 20em;
+      background: black;
+      font-family: sans-serif;
+      margin: 0 4px;
+  }
+  .font-smooth {
+      position: absolute;
+      color: #black;
+      font-size: 150% !important;
+  }
+  .no-font-smooth {
+      position: absolute;
+      color: lime;
+      font-size: 150% !important;
+  }
+
+  .never { font-smooth: never; }
+  .always { font-smooth: always; }
+  .fs2em { font-smooth: 2em; }
+  .wk-none { -webkit-font-smoothing: none; }
+  .wk-antialiased { -webkit-font-smoothing: antialiased; }
+  .wk-subpixel-antialiased {
+      -webkit-font-smoothing: subpixel-antialiased;
+  }
+  .moz-grayscale { -moz-osx-font-smoothing: grayscale; }
+</style>
+
+<div class="caniuse-style-test">
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-smooth-10" class="visual">
+      <div class="vis_test">
+        <div class="font-smooth-wrap">
+          <div class="no-font-smooth">TEST12345-67890</div>
+          <div class="font-smooth never">TEST12345-67890</div>
+        </div>
+      </div>
+    </div>
+    <p class="condition">font-smooth: never;</p>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-smooth-11" class="visual">
+      <div class="vis_test">
+        <div class="font-smooth-wrap">
+          <div class="no-font-smooth">TEST12345-67890</div>
+          <div class="font-smooth always">TEST12345-67890</div>
+        </div>
+      </div>
+    </div>
+    <p class="condition">font-smooth: always;</p>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-smooth-12" class="visual">
+      <div class="vis_test">
+        <div class="font-smooth-wrap">
+          <div class="no-font-smooth">TEST12345-67890</div>
+          <div class="font-smooth fs2em">TEST12345-67890</div>
+        </div>
+      </div>
+    </div>
+    <p class="condition">font-smooth: 2em;</p>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-smooth-13" class="visual">
+      <div class="vis_test">
+        <div class="font-smooth-wrap">
+          <div class="no-font-smooth">TEST12345-67890</div>
+          <div class="font-smooth wk-none">TEST12345-67890</div>
+        </div>
+      </div>
+    </div>
+    <p class="condition">-webkit-font-smoothing: none;</p>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-smooth-14" class="visual">
+      <div class="vis_test">
+        <div class="font-smooth-wrap">
+          <div class="no-font-smooth">TEST12345-67890</div>
+          <div class="font-smooth wk-antialiased">TEST12345-67890</div>
+        </div>
+      </div>
+    </div>
+    <p class="condition">-webkit-font-smoothing: antialiased</p>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-smooth-15" class="visual">
+      <div class="vis_test">
+        <div class="font-smooth-wrap">
+          <div class="no-font-smooth">TEST12345-67890</div>
+          <div class="font-smooth wk-subpixel-antialiased">TEST12345-67890</div>
+        </div>
+      </div>
+    </div>
+    <p class="condition">-webkit-font-smoothing: subpixel-antialiased;</p>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-smooth-15" class="visual">
+      <div class="vis_test">
+        <div class="font-smooth-wrap">
+          <div class="no-font-smooth">TEST12345-67890</div>
+          <div class="font-smooth moz-grayscale">TEST12345-67890</div>
+        </div>
+      </div>
+    </div>
+    <p class="condition">-moz-osx-font-smoothing: grayscale;</p>
+  </div>
+
+</div>
+
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="legend">no <q>font-smooth</q></div>
+      <div class="test-body feature-on">
+        This is test, 12345-67890.
+      </div>
+      <div class="test-body feature-off">
+        This is test, 12345-67890.
+      </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>font-smooth: never;</q></div>
+      <div class="never test-body feature-on">
+        This is test, 12345-67890.
+      </div>
+      <div class="test-body feature-off">
+        This is test, 12345-67890.
+      </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>font-smooth: always;</q></div>
+      <div class="always test-body feature-on">
+        This is test, 12345-67890.
+      </div>
+      <div class="test-body feature-off">
+        This is test, 12345-67890.
+      </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>font-smooth: 2em;</q></div>
+      <div class="fs2em test-body feature-on">
+        This is test, 12345-67890.
+      </div>
+      <div class="test-body feature-off">
+        This is test, 12345-67890.
+      </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>-webkit-font-smooth: none;</q></div>
+      <div class="wk-none test-body feature-on">
+        This is test, 12345-67890.
+      </div>
+      <div class="test-body feature-off">
+        This is test, 12345-67890.
+      </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>-webkit-font-smooth: antialiased;</q></div>
+      <div class="wk-antialiased test-body feature-on">
+        This is test, 12345-67890.
+      </div>
+      <div class="test-body feature-off">
+        This is test, 12345-67890.
+      </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>-webkit-font-smooth: subpixel-antialiased;</q></div>
+      <div class="wk-subpixel-antialiased test-body feature-on">
+        This is test, 12345-67890.
+      </div>
+      <div class="test-body feature-off">
+        This is test, 12345-67890.
+      </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>-moz-osx-font-smoothing: grayscale;</q></div>
+      <div class="moz-grayscale test-body feature-on">
+        This is test, 12345-67890.
+      </div>
+      <div class="test-body feature-off">
+        This is test, 12345-67890.
+      </div>
+  </div>
+
+
+</div>
+
+
+
+</div>
+
+<div class="test-footer">
+  
+  <div class="references">
+    <div class="title">References:</div>
+    <ul>
+      
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth">https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth</a></li>
+      
+    </ul>
+  </div>
+  
+</div>
+
+        
+        
+      </div>
+    </div>
+  </body>
+</html>

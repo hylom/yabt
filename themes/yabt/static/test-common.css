@@ -1,0 +1,163 @@
+.test-content {
+    padding: 0 8px;
+}
+
+.test-footer {
+    padding: 0 8px;
+}    
+
+
+.test-wrap {
+    border: 1px solid #CCC;
+    margin-bottom: 1em;
+}
+
+.test-wrap .legend {
+    background: yellow;
+    color: black;
+    padding: 0 4px;
+}
+
+.test-wrap .legend::before {
+    content: "Testcase: ";
+    font-weight: bold;
+}
+
+.test-wrap .description {
+    padding: 0 4px;
+}
+
+.test-wrap .test-body {
+    padding: 4px;
+    font-size: 150%;
+}
+
+.test-wrap q {
+    display: inline-block;
+    padding: 0px 4px;
+    background: #fff8dc;
+    border: 1px solid lightgray;
+    font-family: "Lucida Console", Courier, monospace;
+}
+.test-wrap q:before,
+.test-wrap q:after {
+    content: "";
+}
+
+.test-wrap .feature-off,
+.test-wrap .feature-on {
+    border-bottom: 1px solid lightgray;
+}
+
+.test-wrap .feature-off:before,
+.test-wrap .feature-on:before {
+    display: inline-block;
+    background: gray;
+    padding: 0 4px;
+    font-weight: bold;
+    width: 2em;
+    text-align: center;
+    font-size: 80%;
+}
+.test-wrap .feature-on:before {
+    content: "ON";
+    color: orange;
+}
+.test-wrap .feature-off:before {
+    content: "OFF";
+    color: lightsteelblue;
+}
+
+.note {
+    border: 1px solid lightgray;
+    padding: 4px;
+    margin-bottom: 1em;
+}
+
+.note::before {
+    content: "note: ";
+    display: block;
+    background: lightyellow;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+/* imported from test.caniuse.com */
+
+.caniuse-style-test {
+    margin-bottom: 1em;
+    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+    font-size: 12px;
+}
+
+.caniuse-style-test div.test_wrap {
+    display: -moz-inline-stack;
+    display: inline-block;
+    border: 1px solid #CCC;
+    text-align: center;
+    vertical-align: top;
+    min-height: 50px;
+    margin-right: 5px;
+    background: white;
+    position: relative;
+}
+
+.caniuse-style-test div.test_wrap h3 {
+    text-align: center;
+    margin: 2px;
+    font-size: 10px;
+}
+
+.caniuse-style-test p.condition {
+    font-style: italic;
+    margin: 2px;
+    clear: both;
+}
+
+.caniuse-style-test .visual-test {
+    background: red;
+    border: 1px solid black;
+    display: inline-block;
+    height: 30px;
+    width: 30px; 
+}
+
+.caniuse-style-test div.square {
+  display: -moz-inline-stack;
+  display: inline-block;
+  border: 1px solid;
+  width: 30px;
+  height: 30px;
+  background: red;
+}
+    
+.caniuse-style-test div.vis_test {
+    display: -moz-inline-stack;
+    display: inline-block;
+}
+
+.caniuse-style-test div.vis_ref {
+  display: -moz-inline-stack;
+  display: inline-block;
+  border-left: 1px dashed black;
+  margin-left: 5px;
+  padding-left: 5px;
+  vertical-align: top;
+}
+
+.caniuse-style-test div.info {
+    display: none;
+    position: absolute;
+    top: 100%;
+    z-index: 2;
+    left: 0;
+    background: white;
+    padding: 2px;
+    min-width: 300px;
+    border: 1px solid;
+    text-align: left;
+}
+
+.caniuse-style-test div.test_wrap:hover > div.info {
+    display: block;
+}

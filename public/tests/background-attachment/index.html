@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+CSS background-attachment Test &ndash; Yet Another Browser Tests
+</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/test-common.css">
+  </head>
+  <body>
+
+    <div id="site-header">
+      <h1><a href="/">YABT - YET ANOTHER BROWSER TESTS</a></h1>
+    </div>
+
+    <div id="content">
+      <div id="sidebar">
+        <h2>Tests index</h2>
+        <ul>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/css-focus-visible/">:focus-visible CSS pseudo-class</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/autofocus/a/">autofocus for &lt;a&gt; tag</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/autofocus/select/">autofocus for &lt;select&gt; tag</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/css-marker-pseudo/">CSS ::marker pseudo-element</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/background-attachment/">CSS background-attachment</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-smooth/">CSS font-smooth</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-variant-alternates/">CSS font-variant-alternates</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/multicolumn/">CSS3 Multiple column layout</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-unicode-range/">Font unicode-range subsetting</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div id="main">
+        
+
+<div class="header">
+  <h2 class="test-title">CSS background-attachment</h2>
+</div>
+
+<div class="test-content">
+  <style>
+  .wrapper {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+  }
+  .wrapper > div {
+      flex: 1 0;
+      color: blue;
+      font-weight: bold;
+      margin: 4px;
+      padding: 4px;
+      height: 300px;
+      overflow: scroll;
+      background-image: url("./img/shiny.png"), url("./img/men.png")
+  }
+  .scroll { background-attachment: scroll; }
+  .fixed { background-attachment: fixed; }
+  .local {background-attachment: local; }
+  .local-scroll { background-attachment: local, scroll; }
+  .scroll-local { background-attachment: scroll, local; }
+
+  .background-attachment-base {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+  }          
+  .background-attachment-inner {
+      width: 600px;
+      height: 600px;
+  }          
+  #background-attachment10 {
+      background-image: url("./img/background-attachment_scroll.png");
+      background-attachment: scroll;
+  }
+  #background-attachment11 {
+      background-image: url("./img/background-attachment_fixed.png");
+      background-attachment: fixed;
+  }
+  #background-attachment12 {
+      background-image: url("./img/background-attachment_local.png");
+      background-attachment: local;
+  }
+  #background-attachment13 {
+      background-image: url("./img/red.png"), url("./img/lime.png");
+      background-repeat: no-repeat, repeat;
+      background-attachment: fixed, local;
+  }
+</style>
+
+<div class="caniuse-style-test">
+  <div class="visual-test">
+    <div class="background-attachment-base"
+         id="background-attachment10">
+      <div class="background-attachment-inner"></div>
+    </div>
+  </div>
+  <div class="visual-test">
+    <div class="background-attachment-base"
+         id="background-attachment11">
+      <div class="background-attachment-inner"></div>
+    </div>
+  </div>
+  <div class="visual-test">
+    <div class="background-attachment-base"
+         id="background-attachment12">
+      <div class="background-attachment-inner"></div>
+    </div>
+  </div>
+  <div class="visual-test">
+    <div class="background-attachment-base"
+         id="background-attachment13">
+      <div class="background-attachment-inner"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById("background-attachment10").scrollTo(0, 600);
+  document.getElementById("background-attachment11").scrollTo(0, 600);
+  document.getElementById("background-attachment12").scrollTo(0, 600);
+  document.getElementById("background-attachment13").scrollTo(0, 600);
+</script>
+
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="wrapper">
+      <div class="scroll">
+        <div class="legend">scroll</div>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+      </div>
+
+      <div class="fixed">
+        <div class="legend">fixed</div>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+      </div>
+
+      <div class="local">
+        <div class="legend">local</div>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+      </div>
+
+      <div class="local-scroll">
+        <div class="legend">local, scroll</div>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+      </div>
+
+      <div class="scroll-local">
+        <div class="legend">scroll, local</div>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+        ABCDEFG<br>HIJKLMN<br>OPQRSTU<br>VWXYZ<br>1234567890<br>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="note">
+  <ul>
+    <li>scroll: The background is fixed relative to the element itself and does not scroll with its contents. (It is effectively attached to the element's border.)</li>
+    <li>fixed: The background is fixed relative to the viewport. Even if an element has a scrolling mechanism, the background doesn't move with the element. </li>
+    <li>local: The background is fixed relative to the element's contents. If the element has a scrolling mechanism, the background scrolls with the element's contents, and the background painting area and background positioning area are relative to the scrollable area of the element rather than to the border framing them.</li>
+  </ul>
+</div>
+
+</div>
+
+<div class="test-footer">
+  
+  <div class="references">
+    <div class="title">References:</div>
+    <ul>
+      
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment">https://developer.mozilla.org/en-US/docs/Web/CSS/background-attachment</a></li>
+      
+    </ul>
+  </div>
+  
+</div>
+
+        
+        
+      </div>
+    </div>
+  </body>
+</html>

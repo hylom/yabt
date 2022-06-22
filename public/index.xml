@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yet Another BrowserTests on Yet Another Browser Tests</title>
+    <link>http://example.org/</link>
+    <description>Recent content in Yet Another BrowserTests on Yet Another Browser Tests</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>:focus-visible CSS pseudo-class</title>
+      <link>http://example.org/tests/css-focus-visible/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tests/css-focus-visible/</guid>
+      <description> #css-focus-visible10:focus-visible { background-color: lime !important; } #css-focus-visible10:focus { background-color: red; }  Interact    background color is lime when input element is focused
+  </description>
+    </item>
+    
+    <item>
+      <title>autofocus for &lt;a&gt; tag</title>
+      <link>http://example.org/tests/autofocus/a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tests/autofocus/a/</guid>
+      <description>autofocus attribute for a tag autofocus:  This link is focused when this page is opened.    </description>
+    </item>
+    
+    <item>
+      <title>autofocus for &lt;select&gt; tag</title>
+      <link>http://example.org/tests/autofocus/select/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tests/autofocus/select/</guid>
+      <description>&amp;lt;select autofocus&amp;gt; Option 1 Option 2 Option 3   This select form is focused when this page is loaded.   &amp;lt;select&amp;gt; without autofocus  Option 1 Option 2 Option 3   This select form is not focused when this page is loaded.    </description>
+    </item>
+    
+    <item>
+      <title>CSS ::marker pseudo-element</title>
+      <link>http://example.org/tests/css-marker-pseudo/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tests/css-marker-pseudo/</guid>
+      <description>.css-marker-pseudo { border: 1px solid lightgray; } .css-marker-pseudo li { list-style-type: &#34;AbC dE: &#34;; margin-left: 6em; } .css-marker-pseudo.text li::marker { white-space: pre; text-transform: uppercase; letter-spacing: 0px; } .css-marker-pseudo.direction li::marker { direction: rtl; } .css-marker-pseudo.font li::marker { font-weight: bold; font-style: italic; } .css-marker-pseudo.color li::marker { color: green; } .css-marker-pseudo.content li::marker { content: &#34;AAAAA: &#34;; }  no ::marker property  list item 1 list item 2 list item 3    li::marker with white-space: pre; text-transform: uppercase; letter-spacing: 0px;  list item 1 list item 2 list item 3    li::marker with direction: rtl;  list item 1 list item 2 list item 3    li::marker with font-weight: bold; font-style: italic;  list item 1 list item 2 list item 3    li::marker with color: green;  list item 1 list item 2 list item 3    li::marker with content: &#34;</description>
+    </item>
+    
+    <item>
+      <title>CSS background-attachment</title>
+      <link>http://example.org/tests/background-attachment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tests/background-attachment/</guid>
+      <description>.wrapper { display: flex; flex-direction: row; width: 100%; } .wrapper  div { flex: 1 0; color: blue; font-weight: bold; margin: 4px; padding: 4px; height: 300px; overflow: scroll; background-image: url(&#34;./img/shiny.png&#34;), url(&#34;./img/men.png&#34;) } .scroll { background-attachment: scroll; } .fixed { background-attachment: fixed; } .local {background-attachment: local; } .local-scroll { background-attachment: local, scroll; } .scroll-local { background-attachment: scroll, local; } .background-attachment-base { width: 30px; height: 30px; overflow: hidden; } .background-attachment-inner { width: 600px; height: 600px; } #background-attachment10 { background-image: url(&#34;</description>
+    </item>
+    
+    <item>
+      <title>CSS font-smooth</title>
+      <link>http://example.org/tests/font-smooth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tests/font-smooth/</guid>
+      <description>.font-smooth-wrap { position: relative; height: 3em; width: 20em; background: black; font-family: sans-serif; margin: 0 4px; } .font-smooth { position: absolute; color: #black; font-size: 150% !important; } .no-font-smooth { position: absolute; color: lime; font-size: 150% !important; } .never { font-smooth: never; } .always { font-smooth: always; } .fs2em { font-smooth: 2em; } .wk-none { -webkit-font-smoothing: none; } .wk-antialiased { -webkit-font-smoothing: antialiased; } .wk-subpixel-antialiased { -webkit-font-smoothing: subpixel-antialiased; } .moz-grayscale { -moz-osx-font-smoothing: grayscale; }  Visual TEST12345-67890 TEST12345-67890    font-smooth: never;</description>
+    </item>
+    
+    <item>
+      <title>CSS font-variant-alternates</title>
+      <link>http://example.org/tests/font-variant-alternates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tests/font-variant-alternates/</guid>
+      <description>@font-face { font-family: &#34;Cardo&#34;; src: url(&#34;./font/Cardo/Cardo-Regular.ttf&#34;); } #font-variant-alternates10, #font-variant-alternates11, #font-variant-alternates12 { font-family: &#39;Cardo&#39;, serif; } #font-variant-alternates10 .hist { font-variant-alternates: historical-forms; } #font-variant-alternates11 .salt1 { font-variant-alternates: stylistic(salt1); } #font-variant-alternates12 .ss15 { font-variant-alternates: styleset(ss15); } .vis_ref img { height: 1em; } @font-feature-values &#34;Cardo&#34; { @stylistic { salt1: 1 } @styleset { ss15: 15 } } .plain { font-family: &#39;Cardo&#39;, serif; } .hist { font-family: &#39;Cardo&#39;, serif; font-variant-alternates: historical-forms; } .salt1 { font-family: &#39;Cardo&#39;, serif; font-variant-alternates: stylistic(salt1); } .</description>
+    </item>
+    
+    <item>
+      <title>CSS3 Multiple column layout</title>
+      <link>http://example.org/tests/multicolumn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tests/multicolumn/</guid>
+      <description>  Visual-square. .    column-width: 15px; column-gap: 0;   Visual-square. . .     column-width: 30px; column-gap: 0; break-after: column;    first div has break-after: column; 0 1 2 3 4 5 6 7 8 9 10   0 1 2 3 4 5 6 7 8 9 10    first inline-block div has break-after: column; 0 1 2 3 4 5 6 7 8 9 10   0 1 2 3 4 5 6 7 8 9 10     </description>
+    </item>
+    
+    <item>
+      <title>Font unicode-range subsetting</title>
+      <link>http://example.org/tests/font-unicode-range/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/tests/font-unicode-range/</guid>
+      <description>@font-face { font-family: &#39;Ampersand&#39;; src: local(&#39;Times New Roman&#39;); unicode-range: U+26; } @font-face { font-family: &#39;NonAmpersand&#39;; src: local(&#39;Times New Roman&#39;); } div#font-unicode-range10 div.vis_test { font-family: Ampersand, sans-serif; } div#font-unicode-range10 div.vis_ref img { height: 1em; } .ampersand { font-family: Ampersand, monospace; } .non-ampersand { font-family: NonAmpersand, monospace; }  Visual ABC&amp;&amp;&amp;012   Only `&amp;&#39; character is displayed with the serif font
+  unicode-range: U+26; only &#34; &amp; &#34; character should be displayed with Serif (Times New Roman) font.</description>
+    </item>
+    
+  </channel>
+</rss>

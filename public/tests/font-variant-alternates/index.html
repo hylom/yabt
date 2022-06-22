@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+CSS font-variant-alternates Test &ndash; Yet Another Browser Tests
+</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/test-common.css">
+  </head>
+  <body>
+
+    <div id="site-header">
+      <h1><a href="/">YABT - YET ANOTHER BROWSER TESTS</a></h1>
+    </div>
+
+    <div id="content">
+      <div id="sidebar">
+        <h2>Tests index</h2>
+        <ul>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/css-focus-visible/">:focus-visible CSS pseudo-class</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/autofocus/a/">autofocus for &lt;a&gt; tag</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/autofocus/select/">autofocus for &lt;select&gt; tag</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/css-marker-pseudo/">CSS ::marker pseudo-element</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/background-attachment/">CSS background-attachment</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-smooth/">CSS font-smooth</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-variant-alternates/">CSS font-variant-alternates</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/multicolumn/">CSS3 Multiple column layout</a>
+          </li>
+          
+          <li class="menu-item">
+            <a href="http://example.org/tests/font-unicode-range/">Font unicode-range subsetting</a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div id="main">
+        
+
+<div class="header">
+  <h2 class="test-title">CSS font-variant-alternates</h2>
+</div>
+
+<div class="test-content">
+  <style>
+  @font-face {
+      font-family: "Cardo";
+      src: url("./font/Cardo/Cardo-Regular.ttf");
+  }
+  #font-variant-alternates10,
+  #font-variant-alternates11,
+  #font-variant-alternates12 {
+      font-family: 'Cardo', serif;
+  }
+  #font-variant-alternates10 .hist {
+      font-variant-alternates: historical-forms;
+  }
+  #font-variant-alternates11 .salt1 {
+      font-variant-alternates: stylistic(salt1);
+  }
+  #font-variant-alternates12 .ss15 {
+      font-variant-alternates: styleset(ss15);
+  }
+  .vis_ref img {
+      height: 1em;
+  }
+
+  @font-feature-values "Cardo" {
+      @stylistic { salt1: 1 }
+      @styleset { ss15: 15 }
+  }
+  .plain {
+      font-family: 'Cardo', serif;
+  }
+  .hist {
+      font-family: 'Cardo', serif;
+      font-variant-alternates: historical-forms;
+  }
+  .salt1 {
+      font-family: 'Cardo', serif;
+      font-variant-alternates: stylistic(salt1);
+  }
+  .ss15 {
+      font-family: 'Cardo', serif;
+      font-variant-alternates: styleset(ss15);
+  }
+  
+</style>
+
+<div class="caniuse-style-test">
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-variant-alternates10" class="visual">
+      <div class="vis_test">ssss <span class="hist">ssss</span></div>
+      <div class="vis_ref">
+        <img src="img/font-variant-alternates10.png">
+      </div>
+    </div>
+    <p class="condition">First "ssss" is displayed with "short s" (normal s") and second "ssss" is displayed with "long s"</p>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-variant-alternates11" class="visual">
+      <div class="vis_test">TATA <span class="salt1">TATA</span></div>
+      <div class="vis_ref">
+        <img src="img/font-variant-alternates11.png">
+      </div>
+    </div>
+    <p class="condition">"T" in second "TATA" is displayed in larger than "A"</p>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-variant-alternates12" class="visual">
+      <div class="vis_test">AAaa <span class="ss15">AAaa</span></div>
+      <div class="vis_ref">
+        <img src="img/font-variant-alternates12.png">
+      </div>
+    </div>
+    <p class="condition">"a" in second "AAaa" is displayed in large</p>
+  </div>
+</div>
+
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="legend"><q>font-variant-alternates: historical-forms;</q></div>
+    <div class="hist test-body feature-on">
+      The "s" character in this box should be displayed with "long s".
+    </div>
+    <div class="plain test-body feature-off">
+      The "s" character in this box should be displayed with "long s".
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>font-variant-alternates: stylistic(salt1);</q></div>
+    <div class="salt1 test-body feature-on">
+      TATATA! (The "T" character should be displayed larger than "A")
+    </div>
+    <div class="plain test-body feature-off">
+      TATATA! (The "T" character should be displayed larger than "A")
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>font-variant-alternates: stylistic(ss15);</q></div>
+    <div class="ss15 test-body feature-on">
+      AAAaaa! (Capital letter should be displayed in small, lower-case letter sould be displayed in large)
+    </div>
+    <div class="plain test-body feature-off">
+      AAAaaa! (Capital letter should be displayed in small, lower-case letter sould be displayed in large)
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  The "Cardo" font (<a href="https://fonts.google.com/specimen/Cardo">https://fonts.google.com/specimen/Cardo</a>) supports the following features:
+  <pre>ccmp dlig hist hlig liga onum pnum salt smcp ss01 ss02 ss03 ss04 ss05 ss06 ss07 ss08 ss09 ss10 ss11 ss12 ss13 ss15 subs sups</pre>
+</div>
+
+</div>
+
+<div class="test-footer">
+  
+  <div class="references">
+    <div class="title">References:</div>
+    <ul>
+      
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates">https://developer.mozilla.org/en-US/docs/Web/CSS/font-variant-alternates</a></li>
+      
+    </ul>
+  </div>
+  
+</div>
+
+        
+        
+      </div>
+    </div>
+  </body>
+</html>

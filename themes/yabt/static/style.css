@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: #111;
+    background: #FDFDFD;
+}
+
+* { margin: 0; padding: 0; }
+
+p { margin-bottom: 1em; }
+ul, ol { padding-left: 2em; }
+
+#site-header {
+    border-bottom: 1px solid lightgray;
+}
+
+#site-header h1 {
+    font-size: 100%;
+    padding: 4px 0;
+    margin: 0 8px;
+    font-familiy: system-ui;
+    color: gray;
+}
+
+#site-header a {
+    text-decoration: none;
+    color: gray;
+}
+
+#site-header a:hover {
+    text-decoration: underline;
+}
+
+#content {
+    display: flex;
+    min-height: 90vh;
+}
+
+#sidebar {
+    flex: 0 1 250px;
+    float: left;
+    background: #f5fffa;
+    border-right: 1px solid lightgray;
+}
+
+#sidebar ul {
+    padding: 0 4px;
+    list-style: none;
+    line-height: 170%;
+}
+
+#sidebar .menu-item {
+    border-bottom: 1px dotted lightgray;
+    border-left: 4px solid paleturquoise;
+    padding-left: 4px;
+    margin-top: 4px;
+}
+
+/*
+#sidebar .menu-item:hover {
+    background: lightcyan;
+}
+*/
+
+#sidebar .menu-item:first-child {
+    border-top: 1px solid lightgray;
+}
+
+#sidebar h2 {
+    font-size: 120%;
+    margin: 4px 8px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 1em;
+}
+
+#main {
+    flex: 1 1;
+}
+
+#main p {
+    padding: 0 8px;
+}
+
+#main h2 {
+    background: paleturquoise;
+    padding: 8px 8px;
+    margin: 0 0 0.5em;
+}
+
+.references {
+    border: 1px solid lightgray;
+    padding: 4px;
+}
+
+.references .title {
+    border-bottom: 1px solid lightgray;
+}
+
+.references ul {
+    padding-left: 1em;
+}
