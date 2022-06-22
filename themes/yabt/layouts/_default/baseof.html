@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>{{ block "title" . }} {{ .Site.Title }} {{ end }}</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="/test-common.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}style.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}test-common.css">
   </head>
   <body>
 
     <div id="site-header">
-      <h1><a href="/">YABT - YET ANOTHER BROWSER TESTS</a></h1>
+      <h1><a href="{{ .Site.BaseURL }}">YABT - YET ANOTHER BROWSER TESTS</a></h1>
     </div>
 
     <div id="content">

@@ -1,4 +1,7 @@
-baseURL = 'http://example.org/'
 languageCode = 'en-us'
 title = 'Yet Another Browser Tests'
 theme = 'yabt'
+baseURL = 'https://hylom.github.io/yabt/'
+publishDir = 'docs'
+
+
