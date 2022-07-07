@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-CSS3 Multiple column layout Test &ndash; Yet Another Browser Tests
+Date.prototype.toLocaleDateString Test &ndash; Yet Another Browser Tests
 </title>
     <link rel="stylesheet" href="https://hylom.github.io/yabt/style.css">
     <link rel="stylesheet" href="https://hylom.github.io/yabt/test-common.css">
@@ -87,89 +87,51 @@ CSS3 Multiple column layout Test &ndash; Yet Another Browser Tests
         
 
 <div class="header">
-  <h2 class="test-title">CSS3 Multiple column layout</h2>
+  <h2 class="test-title">Date.prototype.toLocaleDateString</h2>
 </div>
 
 <div class="test-content">
   <style>
 </style>
 
-<div class="caniuse-style-test">
-
-  <div class="test_wrap">
-    <h3>Visual-square</h3><div id="multicolumn1" class="visual-square">
-      <div class="square"><div style="column-width: 15px; column-gap: 0; width:30px;height:30px;background:red;">
-	  <div style="display:inline-block;width:15px;height:30px;background:lime;color:lime;">.</div>
-	  <div style="display:inline-block;width:15px;height:30px;background:lime;color:lime;">.</div>
-        </div>
-      </div>
-    </div>
-    <div class="info">
-      column-width: 15px;
-      column-gap: 0;
-    </div>
-  </div>
-
-  <div class="test_wrap">
-    <h3>Visual-square</h3><div id="multicolumn2" class="visual-square">
-      <div class="square">
-        <div style="width:30px; height:30px; background:red; overflow:hidden">
-	  <div style="width:60px; height:70px; column-width:30px; column-gap:0; background:red; position:relative; left:-30px;">
-	    <div style="width:30px; height:30px; break-after:column; color: red;">.</div>
-	    <div style="width:30px; height:30px; background:lime; color: lime;">.</div>
-            <div style="height: 60px; color: red;">.</div>
-	  </div>
-        </div>
-      </div>
-    </div>
-    <div class="info">
-      column-width: 30px;
-      column-gap: 0;
-      break-after: column;
-    </div>
-  </div>
-</div>
-
 <div class="verbose-test">
   <div class="test-wrap">
-    <div class="legend">first div has <q>break-after: column;</q></div>
-    <div class="test-body feature-on">
-      <div style="width: 100px; height: 150px; column-width: 50px; column-gap: 0; border: 1px solid;">
-        <div style="display:block; background: #ddf; break-after: column;">0 1</div>
-        <div style="display:block; background: #fdd;">2 3 4</div>
-        <div style="display:block; background: #dfd;">5 6 7</div>
-        <div style="display:block; background: #dff;">8 9 10</div>
-      </div>
+    <div class="legend"><q>toLocaleDateString()</q></div>
+    <div class="test-body">
+      <script>
+        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString());
+      </script>
     </div>
-    <div class="test-body feature-off">
-      <div style="width: 100px; height: 150px; column-width: 50px; column-gap: 0; border: 1px solid;">
-        <div style="display:block; background: #ddf;;">0 1</div>
-        <div style="display:block; background: #fdd;">2 3 4</div>
-        <div style="display:block; background: #dfd;">5 6 7</div>
-        <div style="display:block; background: #dff;">8 9 10</div>
-      </div>
   </div>
-</div>
 
-  <div class="verbose-test">
   <div class="test-wrap">
-    <div class="legend">first inline-block div has <q>break-after: column;</q></div>
-    <div class="test-body feature-on">
-      <div style="width: 100px; height: 150px; column-width: 50px; column-gap: 0; border: 1px solid;">
-        <div style="display:inline-block; background: #ddf; break-after: column;">0 1</div>
-        <div style="display:inline-block; background: #fdd;">2 3 4</div>
-        <div style="display:inline-block; background: #dfd;">5 6 7</div>
-        <div style="display:inline-block; background: #dff;">8 9 10</div>
-      </div>
+    <div class="legend"><q>toLocaleDateString('ja-JP')</q></div>
+    <div class="test-body">
+      <script>
+        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString('ja-JP'));
+      </script>
     </div>
-    <div class="test-body feature-off">
-      <div style="width: 100px; height: 150px; column-width: 50px; column-gap: 0; border: 1px solid;">
-        <div style="display:inline-block; background: #ddf;;">0 1</div>
-        <div style="display:inline-block; background: #fdd;">2 3 4</div>
-        <div style="display:inline-block; background: #dfd;">5 6 7</div>
-        <div style="display:inline-block; background: #dff;">8 9 10</div>
-      </div>
   </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>toLocaleDateString('ja-JP-u-ca-japanese')</q></div>
+    <div class="test-body">
+      <script>
+        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString('ja-JP-u-ca-japanese'));
+      </script>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>toLocaleDateString('ar-EG')</q></div>
+    <div class="test-body">
+      <script>
+        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString('ar-EG'));
+      </script>
+    </div>
+  </div>
+
+
 </div>
 
 <div class="note">
@@ -183,7 +145,7 @@ CSS3 Multiple column layout Test &ndash; Yet Another Browser Tests
     <div class="title">References:</div>
     <ul>
       
-      <li><a href="https://developer.mozilla.org/en/docs/Web/CSS/CSS_Columns">https://developer.mozilla.org/en/docs/Web/CSS/CSS_Columns</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString</a></li>
       
     </ul>
   </div>

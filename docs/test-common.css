@@ -161,3 +161,21 @@
 .caniuse-style-test div.test_wrap:hover > div.info {
     display: block;
 }
+
+.caniuse-style-test div.auto {
+    display: -moz-inline-stack;
+    display: inline-block;
+    border: 1px solid;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 10px;
+}
+
+.caniuse-style-test .fail {
+    background: red;
+}
+
+.caniuse-style-test .pass {
+    background: lime;
+}
