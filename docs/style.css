@@ -87,6 +87,10 @@ ul, ol { padding-left: 2em; }
     margin: 0 0 0.5em;
 }
 
+.test-content {
+    margin-bottom: 1em;
+}
+
 .references {
     border: 1px solid lightgray;
     padding: 4px;

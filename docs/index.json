@@ -1,0 +1,18 @@
+{
+  "test_pages": {
+    "css-focus-visible": "https://hylom.github.io/yabt/tests/css-focus-visible/",
+    "autofocus": "https://hylom.github.io/yabt/tests/autofocus/",
+    "css-marker-pseudo": "https://hylom.github.io/yabt/tests/css-marker-pseudo/",
+    "background-attachment": "https://hylom.github.io/yabt/tests/background-attachment/",
+    "css-filters": "https://hylom.github.io/yabt/tests/css-filters/",
+    "font-smooth": "https://hylom.github.io/yabt/tests/font-smooth/",
+    "font-variant-alternates": "https://hylom.github.io/yabt/tests/font-variant-alternates/",
+    "multicolumn": "https://hylom.github.io/yabt/tests/multicolumn/",
+    "date-tolocaledatestring": "https://hylom.github.io/yabt/tests/date-tolocaledatestring/",
+    "font-unicode-range": "https://hylom.github.io/yabt/tests/font-unicode-range/",
+    "input-minlength": "https://hylom.github.io/yabt/tests/input-minlength/",
+    "mpeg4": "https://hylom.github.io/yabt/tests/mpeg4/",
+    "opus": "https://hylom.github.io/yabt/tests/opus/",
+    "iframe-sandbox": "https://hylom.github.io/yabt/tests/iframe-sandbox/"
+  }
+}

@@ -17,24 +17,6 @@
     </item>
     
     <item>
-      <title>autofocus for &lt;a&gt; tag</title>
-      <link>https://hylom.github.io/yabt/tests/autofocus/a/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hylom.github.io/yabt/tests/autofocus/a/</guid>
-      <description>autofocus attribute for a tag autofocus:  This link is focused when this page is opened.    </description>
-    </item>
-    
-    <item>
-      <title>autofocus for &lt;select&gt; tag</title>
-      <link>https://hylom.github.io/yabt/tests/autofocus/select/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://hylom.github.io/yabt/tests/autofocus/select/</guid>
-      <description>&amp;lt;select autofocus&amp;gt; Option 1 Option 2 Option 3   This select form is focused when this page is loaded.   &amp;lt;select&amp;gt; without autofocus  Option 1 Option 2 Option 3   This select form is not focused when this page is loaded.    </description>
-    </item>
-    
-    <item>
       <title>CSS ::marker pseudo-element</title>
       <link>https://hylom.github.io/yabt/tests/css-marker-pseudo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

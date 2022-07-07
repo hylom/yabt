@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>autofocus on Yet Another Browser Tests</title>
+    <link>https://hylom.github.io/yabt/tests/autofocus/</link>
+    <description>Recent content in autofocus on Yet Another Browser Tests</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="https://hylom.github.io/yabt/tests/autofocus/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>autofocus for &lt;a&gt; tag</title>
+      <link>https://hylom.github.io/yabt/tests/autofocus/a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hylom.github.io/yabt/tests/autofocus/a/</guid>
+      <description>autofocus attribute for a tag autofocus:  This link is focused when this page is opened.    </description>
+    </item>
+    
+    <item>
+      <title>autofocus for &lt;select&gt; tag</title>
+      <link>https://hylom.github.io/yabt/tests/autofocus/select/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hylom.github.io/yabt/tests/autofocus/select/</guid>
+      <description>&amp;lt;select autofocus&amp;gt; Option 1 Option 2 Option 3   This select form is focused when this page is loaded.   &amp;lt;select&amp;gt; without autofocus  Option 1 Option 2 Option 3   This select form is not focused when this page is loaded.    </description>
+    </item>
+    
+  </channel>
+</rss>
