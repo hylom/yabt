@@ -1,0 +1,54 @@
+---
+title: {{ replace .Name "-" " " | title }}
+references:
+- 
+---
+<style>
+</style>
+
+<div class="caniuse-style-test">
+  <div class="test_wrap">
+    <h3>Visual</h3>
+    <div id="font-smooth-10" class="visual">
+      <div class="vis_test">
+        <div class="font-smooth-wrap">
+          <div class="no-font-smooth">TEST12345-67890</div>
+          <div class="font-smooth never">TEST12345-67890</div>
+        </div>
+      </div>
+    </div>
+    <p class="condition">font-smooth: never;</p>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Visual-square</h3>
+    <div id="css-filters10" class="visual-square">
+      <div class="square" style="background-color:red; overflow:hidden;">
+        <div style="width:60px;
+                    height:30px;
+                    filter: url(img/css-filter10.svg#filter10);">
+          <div style="width:30px; height:30px;
+                      margin-left: 30px; background: lime;"></div>
+        </div>
+      </div>
+    </div>
+    <div class="info">
+      filter: url(img/css-filter10.svg#filter10);
+    </div>
+  </div>
+</div>
+
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="legend">no <q>hogehoge</q></div>
+      <div class="test-body feature-on">
+      </div>
+      <div class="test-body feature-off">
+      </div>
+  </div>
+
+</div>
+
+<div class="note">
+</div>
+
