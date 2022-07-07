@@ -1,0 +1,51 @@
+---
+title: Date.prototype.toLocaleDateString
+
+references:
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString
+---
+<style>
+</style>
+
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="legend"><q>toLocaleDateString()</q></div>
+    <div class="test-body">
+      <script>
+        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString());
+      </script>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>toLocaleDateString('ja-JP')</q></div>
+    <div class="test-body">
+      <script>
+        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString('ja-JP'));
+      </script>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>toLocaleDateString('ja-JP-u-ca-japanese')</q></div>
+    <div class="test-body">
+      <script>
+        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString('ja-JP-u-ca-japanese'));
+      </script>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>toLocaleDateString('ar-EG')</q></div>
+    <div class="test-body">
+      <script>
+        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString('ar-EG'));
+      </script>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="note">
+</div>

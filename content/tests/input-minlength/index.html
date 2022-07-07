@@ -1,0 +1,24 @@
+---
+title: Minimum length attribute for input fields
+references:
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#minlength
+---
+<style>
+</style>
+
+<div class="caniuse-style-test">
+
+  <div class="test_wrap">
+    <h3>Auto</h3>
+    <div id="input-minlength10" class="auto">
+      <script>
+        const el = document.createElement('input');
+        el.type = "text";
+        setResult('input-minlength10', 'minLength' in el);
+      </script>
+    </div><div class="info">Test for 'minlength' in an input element</div>
+  </div>
+</div>
+
+<div class="note">
+</div>
