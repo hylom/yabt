@@ -94,12 +94,14 @@ Font unicode-range subsetting Test &ndash; Yet Another Browser Tests
   <style>
   @font-face {
       font-family: 'Ampersand';
-      src: local('Times New Roman');
+      src: local('Times New Roman'),
+           local('Droid Serif');
       unicode-range: U+26;
   }
   @font-face {
       font-family: 'NonAmpersand';
-      src: local('Times New Roman');
+      src: local('Times New Roman'),
+           local('Droid Serif');
   }
 
   div#font-unicode-range10 div.vis_test {
@@ -134,10 +136,10 @@ Font unicode-range subsetting Test &ndash; Yet Another Browser Tests
   <div class="test-wrap">
     <div class="legend"><q>unicode-range: U+26;</q></div>
     <div class="ampersand test-body feature-on">
-      only " & " character should be displayed with Serif (Times New Roman) font.
+      only " & " character should be displayed with Serif font.
     </div>
     <div class="non-ampersand test-body feature-off">
-      only " & " character should be displayed with Serif (Times New Roman) font.
+      only " & " character should be displayed with Serif font.
     </div>
   </div>
 </div>
