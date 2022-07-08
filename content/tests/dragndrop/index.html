@@ -1,0 +1,87 @@
+---
+title: Drag and Drop
+references:
+- https://caniuse.com/dragndrop
+- https://html.spec.whatwg.org/multipage/dnd.html#dnd
+- https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/draggable
+---
+<style>
+  ul {
+      padding-left: 0;
+  }
+  li.draggable-item {
+      display: block;
+      border: 2px solid #444;
+      width: 10em;
+      margin: 4px;
+      cursor: grab;
+      text-align: center;
+  }
+  #drag-destination {
+      border: 1px solid #aaa;
+      min-height: 50px;
+      margin: 4px;
+      padding: 4px;
+      text-align: center;
+  }
+  #log {
+      border: 1px solid #aaa;
+      height: 5em;
+      overflow: scroll;
+      padding: 4px;
+      margin: 4px;
+  }
+</style>
+
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="draggable-items">
+      <ul>
+        <li class="draggable-item" draggable="true">draggable item 1</li>
+        <li class="draggable-item" draggable="true">draggable item 2</li>
+        <li class="draggable-item" draggable="true">draggable item 3</li>
+      </ul>
+    </div>
+
+    <div id="drag-destination">
+      drag items here
+    </div>
+
+    <div id="log">
+    </div>
+    
+  </div>
+
+</div>
+
+<div class="note">
+</div>
+
+<script>
+  function log(text) {
+    console.log(text);
+    const el = document.getElementById('log');
+    const i = document.createElement('div');
+    i.textContent = text;
+    el.appendChild(i);
+  }
+  
+  function onDragStart(ev) {
+    log(`start dragging`);
+  }
+
+  const items = document.getElementsByClassName('draggable-item');
+  for (let i = 0; i < items.length; i++) {
+    items[i].addEventListener('ondragstart', onDragStart);
+  }
+
+  const dest = document.getElementById('drag-destination');
+  dest.addEventListener('dragover', ev => {
+    ev.preventDefault();
+  });
+  dest.addEventListener('drop', ev => {
+    log(`droped`);
+    console.log(ev);
+  });
+  
+</script>
