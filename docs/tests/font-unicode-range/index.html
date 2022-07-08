@@ -95,13 +95,17 @@ Font unicode-range subsetting Test &ndash; Yet Another Browser Tests
   @font-face {
       font-family: 'Ampersand';
       src: local('Times New Roman'),
-           local('Droid Serif');
+           local('Droid Serif'),
+           local('Noto Serif'),
+           url(https://fonts.gstatic.com/s/notoserif/v21/ga6Iaw1J5X9T9RW6j9bNfFcWaDq8fMU.woff2) format('woff2');
       unicode-range: U+26;
   }
   @font-face {
       font-family: 'NonAmpersand';
       src: local('Times New Roman'),
-           local('Droid Serif');
+           local('Droid Serif'),
+           local('Noto Serif'),
+           url(https://fonts.gstatic.com/s/notoserif/v21/ga6Iaw1J5X9T9RW6j9bNfFcWaDq8fMU.woff2) format('woff2');
   }
 
   div#font-unicode-range10 div.vis_test {
