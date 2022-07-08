@@ -1,0 +1,44 @@
+---
+title: Web Share API
+references:
+- https://caniuse.com/web-share
+- https://www.w3.org/TR/web-share/
+- https://developer.mozilla.org/ja/docs/Web/API/Navigator/share
+---
+<style>
+</style>
+
+<div class="caniuse-style-test">
+  <div class="test_wrap">
+    <h3>Interact</h3>
+    <div id="web-share10" class="interact">
+      <button id="web-share10">share</button>
+      <div id="web-share10-result"></div>
+      <script>
+        (function () {
+          const result = document.getElementById('web-share10-result');
+          const el = document.getElementById('web-share10');
+          el.addEventListener('click', ev => {
+            const data = { url: "https://example.com/",
+                           text: "example.com",
+                           title: "share example.com", };
+            try {
+              navigator.share(data).then(() => {
+                setResult('web-share10', true);
+                result.textContent = 'share finished';
+              });
+              result.textContent = 'ok';
+              setResult('web-share10', true);
+            } catch (err) {
+              console.log(err);
+              result.textContent = err;
+              setResult('web-share10', false);
+            }
+          });
+        }).apply(this);
+      </script>
+    </div>
+    <div class="info">Test for navigator.share()</div>
+  </div>
+</div>
+
