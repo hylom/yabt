@@ -1,0 +1,144 @@
+---
+title: Asynchronous Clipboard API
+references:
+- https://caniuse.com/async-clipboard
+- https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API
+---
+<style>
+  .ok { background-color: lime; }
+  .fail { background-color: red; }
+</style>
+
+<div class="verbose-test">
+
+  <div class="test-wrap">
+    <div class="legend">writeText()</div>
+    <div class="test-body">
+      <button id="write-text">writeText()</button>
+      <input id="form-for-write-text" value="test">
+      <span id="write-text-result"></span>
+      <script>
+        (function () {
+          const result = document.getElementById('write-text-result');
+          const field = document.getElementById('form-for-write-text');
+          document.getElementById('write-text').addEventListener('click', ev => {
+            try {
+              navigator.clipboard.writeText(field.value)
+                .then(() => {
+                  result.classList.add('ok');
+                  result.textContent = 'ok';
+                });
+            } catch (err) {
+                console.log(err);
+                result.textContent = err;
+                result.classList.add('fail');
+            }
+          });
+        }).apply(this);
+      </script>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">readText()</div>
+    <div class="test-body">
+      <button id="read-text">readText()</button>
+      <input id="form-for-read-text">
+      <span id="read-text-result"></span>
+      <script>
+        (function () {
+          const result = document.getElementById('read-text-result');
+          const field = document.getElementById('form-for-read-text');
+          document.getElementById('read-text').addEventListener('click', ev => {
+            try {
+              navigator.clipboard.readText()
+                .then(text => {
+                  field.value = text;
+                  result.classList.add('ok');
+                  result.textContent = 'ok';
+                });
+            } catch (err) {
+                console.log(err);
+                result.textContent = err;
+                result.classList.add('fail');
+            }
+          });
+        }).apply(this);
+      </script>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">write()</div>
+    <div class="test-body">
+      <button id="write">write()</button>
+      <input id="form-for-write" value="test">
+      <span id="write-result"></span>
+      <script>
+        (function () {
+          const result = document.getElementById('write-result');
+          const field = document.getElementById('form-for-write');
+          document.getElementById('write').addEventListener('click', ev => {
+            try {
+              const type = "text/plain";
+              const blob = new Blob([field.value], { type });
+              const data = [new ClipboardItem({ [type]: blob })];
+              
+              navigator.clipboard.write(data)
+                .then(() => {
+                  result.classList.add('ok');
+                  result.textContent = 'ok';
+                });
+            } catch (err) {
+                console.log(err);
+                result.textContent = err;
+                result.classList.add('fail');
+            }
+          });
+        }).apply(this);
+      </script>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">read()</div>
+    <div class="test-body">
+      <button id="read">read()</button>
+      <input id="form-for-read">
+      <span id="read-result"></span>
+      <script>
+        (function () {
+          const result = document.getElementById('read-result');
+          const field = document.getElementById('form-for-read');
+          document.getElementById('read').addEventListener('click', ev => {
+            try {
+              navigator.clipboard.read()
+                .then(contents => {
+                  for (const item of contents) {
+                    if (item.types.includes('text/plain')) {
+                      item.getType('text/plain')
+                        .then(blob => blob.text())
+                        .then(text => {
+                          field.value = text;
+                          result.classList.add('ok');
+                          result.textContent = 'ok';
+                        });
+                    }
+                  }
+                });
+            } catch (err) {
+                console.log(err);
+                result.textContent = err;
+                result.classList.add('fail');
+            }
+          });
+        }).apply(this);
+      </script>
+    </div>
+  </div>
+
+</div>
+
+<div class="note">
+</div>
+
