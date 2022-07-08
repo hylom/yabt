@@ -1,0 +1,220 @@
+---
+title: Intrinsic & Extrinsic Sizing
+references:
+- https://www.w3.org/TR/css-sizing-3/
+- https://developer.mozilla.org/ja/docs/Web/CSS/max-content
+- https://developer.mozilla.org/ja/docs/Web/CSS/min-content
+- https://developer.mozilla.org/ja/docs/Web/CSS/fit-content
+- https://developer.mozilla.org/ja/docs/Web/CSS/fit-content_function
+- https://caniuse.com/intrinsic-width
+---
+<style>
+  .limit-width { width: 16em; }
+  .test-body div { background: #EEE; }
+</style>
+
+<div class="caniuse-style-test">
+  <div class="test_wrap">
+    <h3>Auto</h3>
+    <div id="intrinsic-width10" class="auto">
+      <script>
+        if (window.CSS) {
+          setResult('intrinsic-width10', CSS.supports('width', 'max-content'));
+        }
+      </script>
+    </div>
+    <div class="info">CSS.supports test for width: max-content</div>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Auto</h3>
+    <div id="intrinsic-width11" class="auto">
+      <script>
+        if (window.CSS) {
+          setResult('intrinsic-width11', CSS.supports('width', 'min-content'));
+        }
+      </script>
+    </div>
+    <div class="info">CSS.supports test for width: min-content</div>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Auto</h3>
+    <div id="intrinsic-width12" class="auto">
+      <script>
+        if (window.CSS) {
+          setResult('intrinsic-width12', CSS.supports('width', 'fit-content'));
+        }
+      </script>
+    </div>
+    <div class="info">CSS.supports test for width: fit-content</div>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Auto</h3>
+    <div id="intrinsic-width13" class="auto">
+      <script>
+        if (window.CSS) {
+          setResult('intrinsic-width13', CSS.supports('width', 'fit-content(50%)'));
+        }
+      </script>
+    </div>
+    <div class="info">CSS.supports test for width: fit-content(50%)</div>
+  </div>
+
+</div>
+
+<div class="caniuse-style-test webkit-prefixed-test">
+  <div class="test_wrap">
+    <h3>Auto</h3>
+    <div id="intrinsic-width20" class="auto">
+      <script>
+        if (window.CSS) {
+          setResult('intrinsic-width20', CSS.supports('width', '-webkit-fill-available'));
+        }
+      </script>
+    </div>
+    <div class="info">CSS.supports test for width: -webkit-fill-available</div>
+  </div>
+</div>
+
+<div class="caniuse-style-test moz-prefixed-test">
+  <div class="test_wrap">
+    <h3>Auto</h3>
+    <div id="intrinsic-width30" class="auto">
+      <script>
+        if (window.CSS) {
+          setResult('intrinsic-width30', CSS.supports('width', '-moz-available'));
+        }
+      </script>
+    </div>
+    <div class="info">CSS.supports test for width: -moz-available</div>
+  </div>
+
+</div>
+
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="legend"><q>width: auto;</q></div>
+    <div class="test-body limit-width">
+      <div style="width: auto;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>width: min-content;</q></div>
+    <div class="test-body limit-width">
+      <div style="width: min-content;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>width: max-content;</q></div>
+    <div class="test-body limit-width">
+      <div style="width: max-content;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>width: fit-content;</q></div>
+    <div class="test-body limit-width">
+      <div style="width: fit-content;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>width: fit-content(80%);</q></div>
+    <div class="test-body limit-width">
+      <div style="width: fit-content(80%);">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>width: -webkit-fill-available;</q></div>
+    <div class="test-body limit-width">
+      <div style="width: -webkit-fill-available;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>width: -moz-available;</q></div>
+    <div class="test-body limit-width">
+      <div style="width: -moz-available;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>width: fit-content;</q></div>
+    <div class="test-body feature-on">
+      <div style="width: fit-content;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+    <div class="test-body feature-off">
+      <div style="">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>width: fit-content(50%);</q></div>
+    <div class="test-body feature-on">
+      <div style="width: fit-content(50%);">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+    <div class="test-body feature-off">
+      <div style="">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>width: -webkit-fill-available;</q></div>
+    <div class="test-body feature-on">
+      <div style="width: -webkit-fill-available;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+    <div class="test-body feature-off">
+      <div style="">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend"><q>width: -moz-available;</q></div>
+    <div class="test-body feature-on">
+      <div style="width: -moz-available;">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+    <div class="test-body feature-off">
+      <div style="">
+        The quick brown fox jumps over the lazy dog
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="note">
+</div>
+
