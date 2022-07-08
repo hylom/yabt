@@ -62,6 +62,17 @@ references:
     <div class="info">CSS.supports test for width: fit-content(50%)</div>
   </div>
 
+  <div class="test_wrap">
+    <h3>Auto</h3>
+    <div id="intrinsic-width14" class="auto">
+      <script>
+        if (window.CSS) {
+          setResult('intrinsic-width14', CSS.supports('flex-basis', 'max-content'));
+        }
+      </script>
+    </div>
+    <div class="info">CSS.supports test for flex-basis: max-content</div>
+  </div>
 </div>
 
 <div class="caniuse-style-test webkit-prefixed-test">

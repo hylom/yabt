@@ -2,7 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title> Yet Another Browser Tests </title>
+    <title>
+Drag and Drop Test &ndash; Yet Another Browser Tests
+</title>
     <link rel="stylesheet" href="https://hylom.github.io/yabt/style.css">
     <link rel="stylesheet" href="https://hylom.github.io/yabt/test-common.css">
     <script src="https://hylom.github.io/yabt/probes.js"></script>
@@ -92,79 +94,110 @@
       <div id="main">
         
 
+<div class="header">
+  <h2 class="test-title">Drag and Drop</h2>
+</div>
 
-<ul>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/css-focus-visible/">:focus-visible CSS pseudo-class</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/autofocus/a/">autofocus for &lt;a&gt; tag</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/autofocus/select/">autofocus for &lt;select&gt; tag</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/css-marker-pseudo/">CSS ::marker pseudo-element</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/background-attachment/">CSS background-attachment</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/css-filters/">CSS Filter Effects</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/font-smooth/">CSS font-smooth</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/font-variant-alternates/">CSS font-variant-alternates</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/multicolumn/">CSS3 Multiple column layout</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/date-tolocaledatestring/">Date.prototype.toLocaleDateString</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/dragndrop/">Drag and Drop</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/font-unicode-range/">Font unicode-range subsetting</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/intrinsic-width/">Intrinsic &amp; Extrinsic Sizing</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/input-minlength/">Minimum length attribute for input fields</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/mpeg4/">MPEG-4/H.264 video format</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/opus/">Opus</a>
-  </li>
-  
-  <li>
-    <a href="https://hylom.github.io/yabt/tests/iframe-sandbox/">sandbox attribute for iframes</a>
-  </li>
-  
-</ul>
+<div class="test-content">
+  <style>
+  ul {
+      padding-left: 0;
+  }
+  li.draggable-item {
+      display: block;
+      border: 2px solid #444;
+      width: 10em;
+      margin: 4px;
+      cursor: grab;
+      text-align: center;
+  }
+  #drag-destination {
+      border: 1px solid #aaa;
+      min-height: 50px;
+      margin: 4px;
+      padding: 4px;
+      text-align: center;
+  }
+  #log {
+      border: 1px solid #aaa;
+      height: 5em;
+      overflow: scroll;
+      padding: 4px;
+      margin: 4px;
+  }
+</style>
+
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="draggable-items">
+      <ul>
+        <li class="draggable-item" draggable="true">draggable item 1</li>
+        <li class="draggable-item" draggable="true">draggable item 2</li>
+        <li class="draggable-item" draggable="true">draggable item 3</li>
+      </ul>
+    </div>
+
+    <div id="drag-destination">
+      drag items here
+    </div>
+
+    <div id="log">
+    </div>
     
+  </div>
+
+</div>
+
+<div class="note">
+</div>
+
+<script>
+  function log(text) {
+    console.log(text);
+    const el = document.getElementById('log');
+    const i = document.createElement('div');
+    i.textContent = text;
+    el.appendChild(i);
+  }
+  
+  function onDragStart(ev) {
+    log(`start dragging`);
+  }
+
+  const items = document.getElementsByClassName('draggable-item');
+  for (let i = 0; i < items.length; i++) {
+    items[i].addEventListener('ondragstart', onDragStart);
+  }
+
+  const dest = document.getElementById('drag-destination');
+  dest.addEventListener('dragover', ev => {
+    ev.preventDefault();
+  });
+  dest.addEventListener('drop', ev => {
+    log(`droped`);
+    console.log(ev);
+  });
+  
+</script>
+
+</div>
+
+<div class="test-footer">
+  
+  <div class="references">
+    <div class="title">References:</div>
+    <ul>
+      
+      <li><a href="https://caniuse.com/dragndrop">https://caniuse.com/dragndrop</a></li>
+      
+      <li><a href="https://html.spec.whatwg.org/multipage/dnd.html#dnd">https://html.spec.whatwg.org/multipage/dnd.html#dnd</a></li>
+      
+      <li><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/draggable">https://developer.mozilla.org/ja/docs/Web/HTML/Global_attributes/draggable</a></li>
+      
+    </ul>
+  </div>
+  
+</div>
 
         
         
