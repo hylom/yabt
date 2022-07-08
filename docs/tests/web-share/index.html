@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-Minimum length attribute for input fields Test &ndash; Yet Another Browser Tests
+Web Share API Test &ndash; Yet Another Browser Tests
 </title>
     <link rel="stylesheet" href="https://hylom.github.io/yabt/style.css">
     <link rel="stylesheet" href="https://hylom.github.io/yabt/test-common.css">
@@ -103,7 +103,7 @@ Minimum length attribute for input fields Test &ndash; Yet Another Browser Tests
         
 
 <div class="header">
-  <h2 class="test-title">Minimum length attribute for input fields</h2>
+  <h2 class="test-title">Web Share API</h2>
 </div>
 
 <div class="test-content">
@@ -111,21 +111,39 @@ Minimum length attribute for input fields Test &ndash; Yet Another Browser Tests
 </style>
 
 <div class="caniuse-style-test">
-
   <div class="test_wrap">
-    <h3>Auto</h3>
-    <div id="input-minlength10" class="auto">
+    <h3>Interact</h3>
+    <div id="web-share10" class="interact">
+      <button id="web-share10">share</button>
+      <div id="web-share10-result"></div>
       <script>
-        const el = document.createElement('input');
-        el.type = "text";
-        setResult('input-minlength10', 'minLength' in el);
+        (function () {
+          const result = document.getElementById('web-share10-result');
+          const el = document.getElementById('web-share10');
+          el.addEventListener('click', ev => {
+            const data = { url: "https://example.com/",
+                           text: "example.com",
+                           title: "share example.com", };
+            try {
+              navigator.share(data).then(() => {
+                setResult('web-share10', true);
+                result.textContent = 'share finished';
+              });
+              result.textContent = 'ok';
+              setResult('web-share10', true);
+            } catch (err) {
+              console.log(err);
+              result.textContent = err;
+              setResult('web-share10', false);
+            }
+          });
+        }).apply(this);
       </script>
-    </div><div class="info">Test for 'minlength' in an input element</div>
+    </div>
+    <div class="info">Test for navigator.share()</div>
   </div>
 </div>
 
-<div class="note">
-</div>
 
 </div>
 
@@ -135,7 +153,11 @@ Minimum length attribute for input fields Test &ndash; Yet Another Browser Tests
     <div class="title">References:</div>
     <ul>
       
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#minlength">https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#minlength</a></li>
+      <li><a href="https://caniuse.com/web-share">https://caniuse.com/web-share</a></li>
+      
+      <li><a href="https://www.w3.org/TR/web-share/">https://www.w3.org/TR/web-share/</a></li>
+      
+      <li><a href="https://developer.mozilla.org/ja/docs/Web/API/Navigator/share">https://developer.mozilla.org/ja/docs/Web/API/Navigator/share</a></li>
       
     </ul>
   </div>

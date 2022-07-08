@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>Asynchronous Clipboard API</title>
+      <link>https://hylom.github.io/yabt/tests/async-clipboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hylom.github.io/yabt/tests/async-clipboard/</guid>
+      <description>.ok { background-color: lime; } .fail { background-color: red; }  writeText() writeText()   (function () { const result = document.getElementById(&#39;write-text-result&#39;); const field = document.getElementById(&#39;form-for-write-text&#39;); document.getElementById(&#39;write-text&#39;).addEventListener(&#39;click&#39;, ev = { try { navigator.clipboard.writeText(field.value) .then(() = { result.classList.add(&#39;ok&#39;); result.textContent = &#39;ok&#39;; }); } catch (err) { console.log(err); result.textContent = err; result.classList.add(&#39;fail&#39;); } }); }).apply(this);    readText() readText()   (function () { const result = document.getElementById(&#39;read-text-result&#39;); const field = document.</description>
+    </item>
+    
+    <item>
       <title>CSS ::marker pseudo-element</title>
       <link>https://hylom.github.io/yabt/tests/css-marker-pseudo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -140,6 +149,15 @@
       
       <guid>https://hylom.github.io/yabt/tests/iframe-sandbox/</guid>
       <description>  Visual-square    sandbox=&#34;&#34;     </description>
+    </item>
+    
+    <item>
+      <title>Web Share API</title>
+      <link>https://hylom.github.io/yabt/tests/web-share/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hylom.github.io/yabt/tests/web-share/</guid>
+      <description>  Interact share   (function () { const result = document.getElementById(&#39;web-share10-result&#39;); const el = document.getElementById(&#39;web-share10&#39;); el.addEventListener(&#39;click&#39;, ev = { const data = { url: &#34;https://example.com/&#34;, text: &#34;example.com&#34;, title: &#34;share example.com&#34;, }; try { navigator.share(data).then(() = { setResult(&#39;web-share10&#39;, true); result.textContent = &#39;share finished&#39;; }); result.textContent = &#39;ok&#39;; setResult(&#39;web-share10&#39;, true); } catch (err) { console.log(err); result.textContent = err; setResult(&#39;web-share10&#39;, false); } }); }).apply(this);   Test for navigator.share()   </description>
     </item>
     
   </channel>

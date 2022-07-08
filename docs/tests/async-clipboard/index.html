@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-Date.prototype.toLocaleDateString Test &ndash; Yet Another Browser Tests
+Asynchronous Clipboard API Test &ndash; Yet Another Browser Tests
 </title>
     <link rel="stylesheet" href="https://hylom.github.io/yabt/style.css">
     <link rel="stylesheet" href="https://hylom.github.io/yabt/test-common.css">
@@ -103,55 +103,148 @@ Date.prototype.toLocaleDateString Test &ndash; Yet Another Browser Tests
         
 
 <div class="header">
-  <h2 class="test-title">Date.prototype.toLocaleDateString</h2>
+  <h2 class="test-title">Asynchronous Clipboard API</h2>
 </div>
 
 <div class="test-content">
   <style>
+  .ok { background-color: lime; }
+  .fail { background-color: red; }
 </style>
 
 <div class="verbose-test">
+
   <div class="test-wrap">
-    <div class="legend"><q>toLocaleDateString()</q></div>
+    <div class="legend">writeText()</div>
     <div class="test-body">
+      <button id="write-text">writeText()</button>
+      <input id="form-for-write-text" value="test">
+      <span id="write-text-result"></span>
       <script>
-        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString());
+        (function () {
+          const result = document.getElementById('write-text-result');
+          const field = document.getElementById('form-for-write-text');
+          document.getElementById('write-text').addEventListener('click', ev => {
+            try {
+              navigator.clipboard.writeText(field.value)
+                .then(() => {
+                  result.classList.add('ok');
+                  result.textContent = 'ok';
+                });
+            } catch (err) {
+                console.log(err);
+                result.textContent = err;
+                result.classList.add('fail');
+            }
+          });
+        }).apply(this);
       </script>
     </div>
   </div>
 
   <div class="test-wrap">
-    <div class="legend"><q>toLocaleDateString('ja-JP')</q></div>
+    <div class="legend">readText()</div>
     <div class="test-body">
+      <button id="read-text">readText()</button>
+      <input id="form-for-read-text">
+      <span id="read-text-result"></span>
       <script>
-        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString('ja-JP'));
+        (function () {
+          const result = document.getElementById('read-text-result');
+          const field = document.getElementById('form-for-read-text');
+          document.getElementById('read-text').addEventListener('click', ev => {
+            try {
+              navigator.clipboard.readText()
+                .then(text => {
+                  field.value = text;
+                  result.classList.add('ok');
+                  result.textContent = 'ok';
+                });
+            } catch (err) {
+                console.log(err);
+                result.textContent = err;
+                result.classList.add('fail');
+            }
+          });
+        }).apply(this);
       </script>
     </div>
   </div>
 
   <div class="test-wrap">
-    <div class="legend"><q>toLocaleDateString('ja-JP-u-ca-japanese')</q></div>
+    <div class="legend">write()</div>
     <div class="test-body">
+      <button id="write">write()</button>
+      <input id="form-for-write" value="test">
+      <span id="write-result"></span>
       <script>
-        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString('ja-JP-u-ca-japanese'));
+        (function () {
+          const result = document.getElementById('write-result');
+          const field = document.getElementById('form-for-write');
+          document.getElementById('write').addEventListener('click', ev => {
+            try {
+              const type = "text/plain";
+              const blob = new Blob([field.value], { type });
+              const data = [new ClipboardItem({ [type]: blob })];
+              
+              navigator.clipboard.write(data)
+                .then(() => {
+                  result.classList.add('ok');
+                  result.textContent = 'ok';
+                });
+            } catch (err) {
+                console.log(err);
+                result.textContent = err;
+                result.classList.add('fail');
+            }
+          });
+        }).apply(this);
       </script>
     </div>
   </div>
 
   <div class="test-wrap">
-    <div class="legend"><q>toLocaleDateString('ar-EG')</q></div>
+    <div class="legend">read()</div>
     <div class="test-body">
+      <button id="read">read()</button>
+      <input id="form-for-read">
+      <span id="read-result"></span>
       <script>
-        document.write(new Date(Date.UTC(2012, 11, 20, 3, 0, 0)).toLocaleDateString('ar-EG'));
+        (function () {
+          const result = document.getElementById('read-result');
+          const field = document.getElementById('form-for-read');
+          document.getElementById('read').addEventListener('click', ev => {
+            try {
+              navigator.clipboard.read()
+                .then(contents => {
+                  for (const item of contents) {
+                    if (item.types.includes('text/plain')) {
+                      item.getType('text/plain')
+                        .then(blob => blob.text())
+                        .then(text => {
+                          field.value = text;
+                          result.classList.add('ok');
+                          result.textContent = 'ok';
+                        });
+                    }
+                  }
+                });
+            } catch (err) {
+                console.log(err);
+                result.textContent = err;
+                result.classList.add('fail');
+            }
+          });
+        }).apply(this);
       </script>
     </div>
   </div>
-
 
 </div>
 
 <div class="note">
 </div>
+
 
 </div>
 
@@ -161,7 +254,9 @@ Date.prototype.toLocaleDateString Test &ndash; Yet Another Browser Tests
     <div class="title">References:</div>
     <ul>
       
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString</a></li>
+      <li><a href="https://caniuse.com/async-clipboard">https://caniuse.com/async-clipboard</a></li>
+      
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API">https://developer.mozilla.org/en-US/docs/Web/API/Clipboard_API</a></li>
       
     </ul>
   </div>

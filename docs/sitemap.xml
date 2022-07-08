@@ -4,6 +4,8 @@
   <url>
     <loc>https://hylom.github.io/yabt/tests/css-focus-visible/</loc>
   </url><url>
+    <loc>https://hylom.github.io/yabt/tests/async-clipboard/</loc>
+  </url><url>
     <loc>https://hylom.github.io/yabt/tests/autofocus/</loc>
   </url><url>
     <loc>https://hylom.github.io/yabt/tests/autofocus/a/</loc>
@@ -43,6 +45,8 @@
     <loc>https://hylom.github.io/yabt/tags/</loc>
   </url><url>
     <loc>https://hylom.github.io/yabt/tests/</loc>
+  </url><url>
+    <loc>https://hylom.github.io/yabt/tests/web-share/</loc>
   </url><url>
     <loc>https://hylom.github.io/yabt/</loc>
   </url>
