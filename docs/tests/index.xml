@@ -85,7 +85,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hylom.github.io/yabt/tests/dragndrop/</guid>
-      <description>ul { padding-left: 0; } li.draggable-item { display: block; border: 2px solid #444; width: 10em; margin: 4px; cursor: grab; text-align: center; } #drag-destination { border: 1px solid #aaa; min-height: 50px; margin: 4px; padding: 4px; text-align: center; } #log { border: 1px solid #aaa; height: 5em; overflow: scroll; padding: 4px; margin: 4px; }   draggable item 1 draggable item 2 draggable item 3   drag items here       function log(text) { console.</description>
+      <description>ul { padding-left: 0; } li.draggable-item { display: block; border: 2px solid #444; width: 10em; margin: 4px; cursor: grab; text-align: center; } #drag-destination { border: 1px solid #aaa; min-height: 50px; margin: 4px; padding: 4px; text-align: center; } .dragging { background: #8f8; } .dragover { background: #f88; } #log { border: 1px solid #aaa; height: 5em; overflow: scroll; padding: 4px; margin: 4px; }   draggable item 1 draggable item 2 draggable item 3   drag items here       function log(text) { console.</description>
     </item>
     
     <item>

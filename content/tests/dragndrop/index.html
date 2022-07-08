@@ -24,6 +24,12 @@ references:
       padding: 4px;
       text-align: center;
   }
+  .dragging {
+      background: #8f8;
+  }
+  .dragover {
+      background: #f88;
+  }
   #log {
       border: 1px solid #aaa;
       height: 5em;
@@ -68,20 +74,64 @@ references:
   
   function onDragStart(ev) {
     log(`start dragging`);
+    ev.target.classList.add("dragging");
+    ev.dataTransfer.setData("text/plain", ev.target.textContent);
+  }
+  function onDragEnd(ev) {
+    log(`end dragging`);
+    ev.target.classList.remove("dragging");
   }
 
   const items = document.getElementsByClassName('draggable-item');
   for (let i = 0; i < items.length; i++) {
-    items[i].addEventListener('ondragstart', onDragStart);
+    items[i].addEventListener('dragstart', onDragStart);
+    items[i].addEventListener('dragend', onDragEnd);
   }
 
   const dest = document.getElementById('drag-destination');
   dest.addEventListener('dragover', ev => {
     ev.preventDefault();
   });
+  dest.addEventListener('dragenter', ev => {
+    ev.preventDefault();
+    ev.target.classList.add("dragover");
+  });
+  dest.addEventListener('dragleave', ev => {
+    ev.preventDefault();
+    ev.target.classList.remove("dragover");
+  });
   dest.addEventListener('drop', ev => {
-    log(`droped`);
+    ev.target.classList.remove("dragover");
+    ev.preventDefault();
     console.log(ev);
+
+    const data = ev.dataTransfer;
+    if (data.files.length) {
+      const filenames = [];
+      for (let i = 0; i < data.files.length; i++) {
+        const f = data.files.item(i);
+        filenames.push(f.name);
+      }
+      const content = filenames.join(", ");
+      log(`${content} is droped [${data.dropEffect}/${data.effectAllowed}]`);
+      return;
+    }
+
+    if (data.items.length) {
+      for (let i = 0; i < data.items.length; i++) {
+        if (data.items[i].type == "text/plain") {
+          data.items[i].getAsString(content => {
+            log(`"${content}" is droped [${data.dropEffect}/${data.effectAllowed}]`);
+          })
+          break;
+        }
+      }
+    }
+
+    const content = "something";
+    log(`${content} is droped [${data.dropEffect}/${data.effectAllowed}]`);
+
+    
   });
   
 </script>
