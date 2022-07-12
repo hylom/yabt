@@ -1,0 +1,89 @@
+---
+title: WebM video format
+references:
+- https://caniuse.com/webm
+- https://developer.mozilla.org/ja/docs/Web/HTML/Element/video
+---
+<style>
+</style>
+
+<div class="caniuse-style-test">
+
+  <!-- content-type=video/webm -->
+  <div class="test_wrap">
+    <h3>Interact</h3><div id="webm10" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/video.webm">
+    </video></div>
+    <div class="info">Video with source element, no type attribute</div>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Interact</h3><div id="webm11" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/video.webm" type='video/webm'>
+    </video></div>
+    <div class="info">Video with source element, type='video/webm' attribute</div>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Interact</h3><div id="webm12" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/video.webm" type='video/webm; codecs="vp8,vorbis"'>
+    </video></div>
+    <div class="info">Video with source element, type='video/webm; codecs="vp8,vorbis"' attribute</div>
+  </div>
+
+
+  <!-- content-type=video/webm -->
+  <div class="test_wrap">
+    <h3>Interact</h3><div id="webm14" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/mimevid.php?type=.webm">
+    </video></div>
+    <div class="info">Video with source element, no type attribute</div>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Interact</h3><div id="webm15" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/mimevid.php?type=.webm" type='video/webm'>
+    </video></div>
+    <div class="info">Video with source element, type='video/webm' attribute</div>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Interact</h3><div id="webm16" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/mimevid.php?type=.webm" type='video/webm; codecs="vp8,vorbis"'>
+    </video></div>
+    <div class="info">Video with source element, type='video/webm; codecs="vp8,vorbis"' attribute</div>
+  </div>
+
+</div>
+
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="legend">invalid codec parameter with source tag (#1)</div>
+    <div class="test-body">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/video.webm" type='video/webm; codecs="theora,vorbis"'>
+      </video>
+    </div>
+    <div class="description">
+      The video uses VP8 and vorbis codec, but "type" attribute is 'video/webm; codecs="theora,vorbis".
+    </div>
+  </div>
+
+  <div class="test-wrap">
+    <div class="legend">invalid codec parameter with source tag (#2)</div>
+    <div class="test-body">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/mimevid.php?type=.webm" type='video/webm; codecs="theora,vorbis"'>
+      </video>
+    </div>
+    <div class="description">
+      The video uses VP8 and vorbis codec, but "type" attribute is 'video/webm; codecs="theora,vorbis".
+    </div>
+  </div>
+</div>
