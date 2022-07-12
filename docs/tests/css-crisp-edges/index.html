@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-CSS Filter Effects Test &ndash; Yet Another Browser Tests
+Crisp edges/pixelated images Test &ndash; Yet Another Browser Tests
 </title>
     <link rel="stylesheet" href="https://hylom.github.io/yabt/style.css">
     <link rel="stylesheet" href="https://hylom.github.io/yabt/test-common.css">
@@ -111,34 +111,33 @@ CSS Filter Effects Test &ndash; Yet Another Browser Tests
         
 
 <div class="header">
-  <h2 class="test-title">CSS Filter Effects</h2>
+  <h2 class="test-title">Crisp edges/pixelated images</h2>
 </div>
 
 <div class="test-content">
-  <div class="caniuse-style-test">
+  <style>
+</style>
 
-  <div class="test_wrap">
-    <h3>Visual-square</h3>
-    <div id="css-filters10" class="visual-square">
-      <div class="square" style="background-color:red; overflow:hidden;">
-        <div style="width:60px;
-                    height:30px;
-                    filter: url(img/css-filter10.svg#filter10);">
-          <div style="width:30px; height:30px;
-                      margin-left: 30px; background: lime;"></div>
-        </div>
-      </div>
-    </div>
-    <div class="info">
-      filter: url(img/css-filter10.svg#filter10);
-    </div>
+<div class="caniuse-style-test">
+  <div class="test_wrap older_spec">
+    <h3>Visual</h3><div id="css-crisp-edges0" class="visual">
+      <div class="vis_test"><img src="https://tests.caniuse.com/tiny-checker.png" width="30" height="30" style="image-rendering: -webkit-optimize-contrast;">
+
+        <div style="display:inline-block;width:30px;height:30px;background-image:url(https://tests.caniuse.com/tiny-checker.png);background-size:30px 30px;image-rendering: -webkit-optimize-contrast;"></div>
+
+        <canvas id="css-crisp-edges0test" width="2" height="2" style="display:inline-block;width:30px;height:30px;image-rendering: -webkit-optimize-contrast;"></canvas>
+
+
+        <script>
+          var canvas = document.getElementById('css-crisp-edges0test');
+          var ctx = canvas.getContext('2d');
+          ctx.fillRect(0,1,1,1);
+          ctx.fillRect(1,0,1,1); 
+    </script></div></div><p class="condition">img / bg / canvas</p><div class="info">Test for image-rendering: -webkit-optimize-contrast</div>
   </div>
-
 </div>
 
 
-<div class="note">
-</div>
 
 </div>
 
@@ -148,7 +147,7 @@ CSS Filter Effects Test &ndash; Yet Another Browser Tests
     <div class="title">References:</div>
     <ul>
       
-      <li><a href="https://developer.mozilla.org/ja/docs/Web/CSS/filter">https://developer.mozilla.org/ja/docs/Web/CSS/filter</a></li>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering">https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering</a></li>
       
     </ul>
   </div>

@@ -26,6 +26,16 @@
     </item>
     
     <item>
+      <title>Crisp edges/pixelated images</title>
+      <link>https://hylom.github.io/yabt/tests/css-crisp-edges/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hylom.github.io/yabt/tests/css-crisp-edges/</guid>
+      <description>  Visual   var canvas = document.getElementById(&#39;css-crisp-edges0test&#39;); var ctx = canvas.getContext(&#39;2d&#39;); ctx.fillRect(0,1,1,1); ctx.fillRect(1,0,1,1); img / bg / canvas
+Test for image-rendering: -webkit-optimize-contrast   </description>
+    </item>
+    
+    <item>
       <title>CSS ::marker pseudo-element</title>
       <link>https://hylom.github.io/yabt/tests/css-marker-pseudo/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -130,7 +140,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://hylom.github.io/yabt/tests/mpeg4/</guid>
-      <description>Interact Video with source element, no type attribute  Interact Video with source element, type=&#39;video/mp4&#39; attribute  Interact Video with source element, type=&#39;video/mp4; codec=&#34;avc1,mp4a.40&#34;&#39; attribute  Interact Video with source element, type=&#39;video/mp4; codec=&#34;avc1.42E01E,mp4a.40.2&#34;&#39; attribute  Interact Video with source element, no type attribute  Interact Video with source element, type=&#39;video/mp4&#39; attribute  Interact Video with source element, type=&#39;video/mp4; codec=&#34;avc1,mp4a.40&#34;&#39; attribute  Interact Video with source element, type=&#39;video/mp4; codec=&#34;avc1.42E01E,mp4a.40.2&#34;&#39; attribute  Interact Video with source element, type=&#39;video/ogg; codecs=&#34;</description>
+      <description>Interact Video with source element, no type attribute  Interact Video with source element, type=&#39;video/mp4&#39; attribute  Interact Video with source element, type=&#39;video/mp4; codecs=&#34;avc1,mp4a.40&#34;&#39; attribute  Interact Video with source element, type=&#39;video/mp4; codecs=&#34;avc1.42E01E,mp4a.40.2&#34;&#39; attribute  Interact Video with source element, no type attribute  Interact Video with source element, type=&#39;video/mp4&#39; attribute  Interact Video with source element, type=&#39;video/mp4; codecs=&#34;avc1,mp4a.40&#34;&#39; attribute  Interact Video with source element, type=&#39;video/mp4; codecs=&#34;avc1.42E01E,mp4a.40.2&#34;&#39; attribute   invalid codec parameter with source tag (#1)   The video uses AVC1 and MP4A codec, but &#34;</description>
     </item>
     
     <item>
@@ -158,6 +168,15 @@
       
       <guid>https://hylom.github.io/yabt/tests/web-share/</guid>
       <description>  Interact share   (function () { const result = document.getElementById(&#39;web-share10-result&#39;); const el = document.getElementById(&#39;web-share10&#39;); el.addEventListener(&#39;click&#39;, ev = { const data = { url: &#34;https://example.com/&#34;, text: &#34;example.com&#34;, title: &#34;share example.com&#34;, }; try { navigator.share(data).then(() = { setResult(&#39;web-share10&#39;, true); result.textContent = &#39;share finished&#39;; }); result.textContent = &#39;ok&#39;; setResult(&#39;web-share10&#39;, true); } catch (err) { console.log(err); result.textContent = err; setResult(&#39;web-share10&#39;, false); } }); }).apply(this);   Test for navigator.share()   </description>
+    </item>
+    
+    <item>
+      <title>WebM video format</title>
+      <link>https://hylom.github.io/yabt/tests/webm/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hylom.github.io/yabt/tests/webm/</guid>
+      <description>Interact Video with source element, no type attribute  Interact Video with source element, type=&#39;video/webm&#39; attribute  Interact Video with source element, type=&#39;video/webm; codecs=&#34;vp8,vorbis&#34;&#39; attribute  Interact Video with source element, no type attribute  Interact Video with source element, type=&#39;video/webm&#39; attribute  Interact Video with source element, type=&#39;video/webm; codecs=&#34;vp8,vorbis&#34;&#39; attribute   invalid codec parameter with source tag (#1)   The video uses VP8 and vorbis codec, but &#34;</description>
     </item>
     
   </channel>

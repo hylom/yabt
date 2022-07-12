@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>
-CSS Filter Effects Test &ndash; Yet Another Browser Tests
+WebM video format Test &ndash; Yet Another Browser Tests
 </title>
     <link rel="stylesheet" href="https://hylom.github.io/yabt/style.css">
     <link rel="stylesheet" href="https://hylom.github.io/yabt/test-common.css">
@@ -111,33 +111,92 @@ CSS Filter Effects Test &ndash; Yet Another Browser Tests
         
 
 <div class="header">
-  <h2 class="test-title">CSS Filter Effects</h2>
+  <h2 class="test-title">WebM video format</h2>
 </div>
 
 <div class="test-content">
-  <div class="caniuse-style-test">
+  <style>
+</style>
+
+<div class="caniuse-style-test">
+
+  <!-- content-type=video/webm -->
+  <div class="test_wrap">
+    <h3>Interact</h3><div id="webm10" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/video.webm">
+    </video></div>
+    <div class="info">Video with source element, no type attribute</div>
+  </div>
 
   <div class="test_wrap">
-    <h3>Visual-square</h3>
-    <div id="css-filters10" class="visual-square">
-      <div class="square" style="background-color:red; overflow:hidden;">
-        <div style="width:60px;
-                    height:30px;
-                    filter: url(img/css-filter10.svg#filter10);">
-          <div style="width:30px; height:30px;
-                      margin-left: 30px; background: lime;"></div>
-        </div>
-      </div>
-    </div>
-    <div class="info">
-      filter: url(img/css-filter10.svg#filter10);
-    </div>
+    <h3>Interact</h3><div id="webm11" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/video.webm" type='video/webm'>
+    </video></div>
+    <div class="info">Video with source element, type='video/webm' attribute</div>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Interact</h3><div id="webm12" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/video.webm" type='video/webm; codecs="vp8,vorbis"'>
+    </video></div>
+    <div class="info">Video with source element, type='video/webm; codecs="vp8,vorbis"' attribute</div>
+  </div>
+
+
+  <!-- content-type=video/webm -->
+  <div class="test_wrap">
+    <h3>Interact</h3><div id="webm14" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/mimevid.php?type=.webm">
+    </video></div>
+    <div class="info">Video with source element, no type attribute</div>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Interact</h3><div id="webm15" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/mimevid.php?type=.webm" type='video/webm'>
+    </video></div>
+    <div class="info">Video with source element, type='video/webm' attribute</div>
+  </div>
+
+  <div class="test_wrap">
+    <h3>Interact</h3><div id="webm16" class="interact">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/mimevid.php?type=.webm" type='video/webm; codecs="vp8,vorbis"'>
+    </video></div>
+    <div class="info">Video with source element, type='video/webm; codecs="vp8,vorbis"' attribute</div>
   </div>
 
 </div>
 
+<div class="verbose-test">
+  <div class="test-wrap">
+    <div class="legend">invalid codec parameter with source tag (#1)</div>
+    <div class="test-body">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/video.webm" type='video/webm; codecs="theora,vorbis"'>
+      </video>
+    </div>
+    <div class="description">
+      The video uses VP8 and vorbis codec, but "type" attribute is 'video/webm; codecs="theora,vorbis".
+    </div>
+  </div>
 
-<div class="note">
+  <div class="test-wrap">
+    <div class="legend">invalid codec parameter with source tag (#2)</div>
+    <div class="test-body">
+      <video width="160" height="120" controls="">
+        <source src="https://tests.caniuse.com/mimevid.php?type=.webm" type='video/webm; codecs="theora,vorbis"'>
+      </video>
+    </div>
+    <div class="description">
+      The video uses VP8 and vorbis codec, but "type" attribute is 'video/webm; codecs="theora,vorbis".
+    </div>
+  </div>
 </div>
 
 </div>
@@ -148,7 +207,9 @@ CSS Filter Effects Test &ndash; Yet Another Browser Tests
     <div class="title">References:</div>
     <ul>
       
-      <li><a href="https://developer.mozilla.org/ja/docs/Web/CSS/filter">https://developer.mozilla.org/ja/docs/Web/CSS/filter</a></li>
+      <li><a href="https://caniuse.com/webm">https://caniuse.com/webm</a></li>
+      
+      <li><a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/video">https://developer.mozilla.org/ja/docs/Web/HTML/Element/video</a></li>
       
     </ul>
   </div>
