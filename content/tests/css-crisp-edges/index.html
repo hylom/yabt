@@ -1,0 +1,28 @@
+---
+title: Crisp edges/pixelated images
+references:
+- https://developer.mozilla.org/en-US/docs/Web/CSS/image-rendering
+---
+<style>
+</style>
+
+<div class="caniuse-style-test">
+  <div class="test_wrap older_spec">
+    <h3>Visual</h3><div id="css-crisp-edges0" class="visual">
+      <div class="vis_test"><img src="https://tests.caniuse.com/tiny-checker.png" width="30" height="30" style="image-rendering: -webkit-optimize-contrast;">
+
+        <div style="display:inline-block;width:30px;height:30px;background-image:url(https://tests.caniuse.com/tiny-checker.png);background-size:30px 30px;image-rendering: -webkit-optimize-contrast;"></div>
+
+        <canvas id="css-crisp-edges0test" width="2" height="2" style="display:inline-block;width:30px;height:30px;image-rendering: -webkit-optimize-contrast;"></canvas>
+
+
+        <script>
+          var canvas = document.getElementById('css-crisp-edges0test');
+          var ctx = canvas.getContext('2d');
+          ctx.fillRect(0,1,1,1);
+          ctx.fillRect(1,0,1,1); 
+    </script></div></div><p class="condition">img / bg / canvas</p><div class="info">Test for image-rendering: -webkit-optimize-contrast</div>
+  </div>
+</div>
+
+
