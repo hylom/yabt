@@ -1,6 +1,7 @@
 {
   "test_pages": {
     "css-focus-visible": "https://hylom.github.io/yabt/tests/css-focus-visible/",
+    "same-site-cookie-attribute": "https://hylom.github.io/yabt/tests/same-site-cookie-attribute/",
     "async-clipboard": "https://hylom.github.io/yabt/tests/async-clipboard/",
     "autofocus": "https://hylom.github.io/yabt/tests/autofocus/",
     "css-crisp-edges": "https://hylom.github.io/yabt/tests/css-crisp-edges/",

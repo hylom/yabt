@@ -4,6 +4,8 @@
   <url>
     <loc>https://hylom.github.io/yabt/tests/css-focus-visible/</loc>
   </url><url>
+    <loc>https://hylom.github.io/yabt/tests/same-site-cookie-attribute/</loc>
+  </url><url>
     <loc>https://hylom.github.io/yabt/tests/async-clipboard/</loc>
   </url><url>
     <loc>https://hylom.github.io/yabt/tests/autofocus/</loc>

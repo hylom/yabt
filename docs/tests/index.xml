@@ -17,6 +17,15 @@
     </item>
     
     <item>
+      <title>&#39;SameSite&#39; cookie attribute</title>
+      <link>https://hylom.github.io/yabt/tests/same-site-cookie-attribute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://hylom.github.io/yabt/tests/same-site-cookie-attribute/</guid>
+      <description>  load https://a.deveria.com/tests/same-site-cookies/ in iframe      </description>
+    </item>
+    
+    <item>
       <title>Asynchronous Clipboard API</title>
       <link>https://hylom.github.io/yabt/tests/async-clipboard/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
